@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SR23_2020_POP2021.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,25 @@ namespace SR23_2020_POP2021
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void login_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow register = new RegisterWindow();
+            register.Show();
+        }
+
+        private void Fitness_Click(object sender, RoutedEventArgs e)
+        {
+            FitnessCenterForceWindow aboutUs = new FitnessCenterForceWindow();
+            aboutUs.Show();
         }
     }
 }
