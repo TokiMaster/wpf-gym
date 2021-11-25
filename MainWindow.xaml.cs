@@ -37,6 +37,7 @@ namespace SR23_2020_POP2021
         {
             RegisterWindow register = new RegisterWindow();
             register.Show();
+            this.Close();
         }
 
         private void Fitness_Click(object sender, RoutedEventArgs e)

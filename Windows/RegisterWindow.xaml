@@ -5,8 +5,391 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
-        Title="RegisterWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen" 
+        Title="RegisterWindow" Height="750" Width="500"
+        WindowStyle="None" ResizeMode="NoResize">
     <Grid>
-        
+        <Image Source="/Images/FitnessCentreBgImg.jpg"
+               Stretch="Fill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" 
+                   FontSize="25" 
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">REGISTRATION
+            </Label>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Username:
+                </Label>
+
+                <Border Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Padding="5" 
+                    CornerRadius="5" 
+                    BorderThickness="1"
+                    BorderBrush="LightGray" 
+                    Width="275"
+                    Height="35"
+                    Background="Transparent">
+
+                    <TextBox Background="Transparent" 
+                         BorderThickness="0"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Foreground="White">
+                    </TextBox>
+                </Border>
+
+                <!--<TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Height="30"
+                     Width="275"
+                     HorizontalAlignment="Left"></TextBox>-->
+            </Grid>
+            
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="2" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Name:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <!--<TextBox Grid.Row="1"
+                     Grid.Column="1"
+                     Height="30"
+                     Width="275"
+                     HorizontalAlignment="Left"></TextBox>-->
+            </Grid>
+            
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Surname:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Street:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Street number:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">City:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Country:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Gender:
+                </Label>
+
+                <ComboBox Grid.Row="1"
+                     Grid.Column="1"
+                     Height="30"
+                     Width="275"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left">
+                    <ComboBoxItem IsSelected="True">MALE</ComboBoxItem>
+                    <ComboBoxItem>FEMALE</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            
+            <Grid Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Email:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+            
+            <Grid Grid.Row="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="15" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Left"
+                   Margin="20,0,0,0"
+                   FontFamily="Times new roman bold" 
+                   Foreground="White">Password:
+                </Label>
+
+                <TextBox Grid.Column="1"
+                         Width="275"
+                         Height="35"
+                         HorizontalAlignment="Left"
+                         HorizontalContentAlignment="Left"
+                         VerticalContentAlignment="Center"
+                         Background="Transparent"
+                         BorderThickness="2"
+                         Foreground="White">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="3"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+            </Grid>
+
+            <Grid Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" 
+                        Content="Register" 
+                        Name="Register"
+                        Click="Register_Click"
+                        Cursor="Hand"
+                        Width="100" 
+                        Height="40"  
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center" />
+
+                <Button Grid.Column="1"
+                        Content="Cancel" 
+                        Name="Cancel"
+                        Click="Cancel_Click"
+                        Cursor="Hand"
+                        Width="100" 
+                        Height="40" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" />
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -23,5 +23,17 @@ namespace SR23_2020_POP2021.Windows
         {
             InitializeComponent();
         }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow home = new MainWindow();
+            home.Show();
+            this.Close();
+        }
     }
 }

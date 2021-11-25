@@ -10,7 +10,7 @@
         WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Image Source="/Images/FitnessCentreBgImg.jpg"
-               Stretch="Fill" Grid.ColumnSpan="2" />
+               Stretch="Fill"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="130"/>
@@ -27,39 +27,39 @@
                    Foreground="White">LOGIN
             </Label>
 
-            <Border Grid.Row="1"
-                    Padding="5" 
-                    CornerRadius="5" 
-                    BorderThickness="1"
-                    BorderBrush="LightGray" 
+            <TextBox Grid.Row="1"
+                     Text="Username"
                     Width="200"
                     Height="35"
-                    Background="Transparent">
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="2"
+                    Foreground="White">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
-                <TextBox Background="Transparent" 
-                         BorderThickness="0"
-                         HorizontalContentAlignment="Center"
-                         VerticalContentAlignment="Center"
-                         Foreground="White">Username
-                </TextBox>
-            </Border>
-
-            <Border Grid.Row="2"
-                    Padding="5" 
-                    CornerRadius="5" 
-                    BorderThickness="1"
-                    BorderBrush="LightGray" 
+            <TextBox Grid.Row="2"
+                     Text="Password"
                     Width="200"
                     Height="35"
-                    Background="Transparent">
-
-                <TextBox Background="Transparent" 
-                         BorderThickness="0"
-                         HorizontalContentAlignment="Center"
-                         VerticalContentAlignment="Center"
-                         Foreground="White">Password
-                </TextBox>
-            </Border>
+                    HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="2"
+                    Foreground="White">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
