@@ -10,7 +10,7 @@ namespace SR23_2020_POP2021.Entities
     {
         private int _id;
         private String _name;
-        private Adress _adress;
+        private Address _address;
         
         public int id
         {
@@ -23,17 +23,17 @@ namespace SR23_2020_POP2021.Entities
             get { return _name; }
             set { _name = value; }
         }
-        public Adress adress
+        public Address address
         {
-            get { return _adress; }
-            set { _adress = value; }
+            get { return _address; }
+            set { _address = value; }
         }
 
-        public FitnessCenter(int id, String name, Adress adress)
+        public FitnessCenter(int id, String name, Address adress)
         {
             this._id = id;
             this._name = name;
-            this._adress = adress;
+            this._address = address;
         }
     }
 }

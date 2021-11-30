@@ -28,7 +28,8 @@
             </Label>
 
             <TextBox Grid.Row="1"
-                     Text="Username"
+                     Name="username"
+                     Text="Toki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"
@@ -45,7 +46,8 @@
             </TextBox>
 
             <TextBox Grid.Row="2"
-                     Text="Password"
+                     Name="password"
+                     Text="toki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"

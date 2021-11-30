@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    class Adress
+    class Address
     {
         private int _id;
         private String _streetName;
@@ -44,13 +44,18 @@ namespace SR23_2020_POP2021.Entities
             set { _country = value; }
         }
 
-        public Adress (int id, String streetName, int streetNumber, String city, String country)
+        public Address (int id, String streetName, int streetNumber, String city, String country)
         {
             this._id = id;
             this._streetName = streetName;
             this._streetNumber = streetNumber;
             this._city = city;
             this._country = country;
+        }
+
+        public override string ToString()
+        {
+            return streetName + ", " + streetNumber + ", " + city + ", " + country;
         }
     }
 }

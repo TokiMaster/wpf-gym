@@ -8,16 +8,21 @@ namespace SR23_2020_POP2021.Entities
 {
     class User
     {
+        private String _username; 
         private String _name;
         private String _surname;
-        private int _id; 
-        private Adress _adress;
+        private Address _adress;
         private Gender _gender;
         private String _email;
         private String _password;
         private Role _userRole;
 
 
+        public String username
+        {
+            get { return _username; }
+            set { _username = value; }
+        }
         public String name
         {
             get { return _name; }
@@ -30,13 +35,8 @@ namespace SR23_2020_POP2021.Entities
             set { _surname = value; }
         }
 
-        public int id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
 
-        public Adress MyProperty
+        public Address address
         {
             get { return _adress; }
             set { _adress = value; }
@@ -70,14 +70,18 @@ namespace SR23_2020_POP2021.Entities
             set { _userRole = value; }
         }
 
+        public User()
+        {
 
-        public User(String name, String surname, int id, Adress adress, Gender gender,
+        }
+
+        public User(String username, String name, String surname, Address address, Gender gender,
             String email, String password, Role role)
         {
+            this._username = username;
             this._name = name;
             this._surname = surname;
-            this._id = id;
-            this._adress = adress;
+            this._adress = address;
             this._gender = gender;
             this._email = email;
             this._password = password;
