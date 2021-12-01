@@ -11,6 +11,7 @@
     <Grid>
         <Image Source="/Images/Lobby.jpg"
                Stretch="Fill"></Image>
+
         <StackPanel Orientation="Vertical"
                     VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal"
@@ -54,19 +55,7 @@
                            Margin="0,0,0,3">
                     </Image>
                 </Button>
+            </StackPanel>
         </StackPanel>
-        </StackPanel>
-        <DataGrid Name="UsersDG" Height="350" Width="800" Background="Transparent">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="100"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="100"/>
-                <DataGridTextColumn Header="Surname" Binding="{Binding surname}" Width="100"/>
-                <DataGridTextColumn Header="Address" Binding="{Binding address}" Width="100"/>
-                <DataGridTextColumn Header="Gender" Binding="{Binding gender}" Width="100"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="100"/>
-                <DataGridTextColumn Header="Password" Binding="{Binding password}" Width="100"/>
-                <DataGridTextColumn Header="Role" Binding="{Binding userRole}" Width="100"/>
-            </DataGrid.Columns>
-        </DataGrid>
     </Grid>
 </Window>

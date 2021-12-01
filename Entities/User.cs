@@ -11,7 +11,7 @@ namespace SR23_2020_POP2021.Entities
         private String _username; 
         private String _name;
         private String _surname;
-        private Address _adress;
+        private Address _address;
         private Gender _gender;
         private String _email;
         private String _password;
@@ -38,8 +38,8 @@ namespace SR23_2020_POP2021.Entities
 
         public Address address
         {
-            get { return _adress; }
-            set { _adress = value; }
+            get { return _address; }
+            set { _address = value; }
         }
 
 
@@ -81,7 +81,7 @@ namespace SR23_2020_POP2021.Entities
             this._username = username;
             this._name = name;
             this._surname = surname;
-            this._adress = address;
+            this._address = address;
             this._gender = gender;
             this._email = email;
             this._password = password;

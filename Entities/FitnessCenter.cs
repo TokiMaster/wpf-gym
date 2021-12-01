@@ -29,7 +29,7 @@ namespace SR23_2020_POP2021.Entities
             set { _address = value; }
         }
 
-        public FitnessCenter(int id, String name, Address adress)
+        public FitnessCenter(int id, String name, Address address)
         {
             this._id = id;
             this._name = name;
