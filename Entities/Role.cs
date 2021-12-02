@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    enum Role
+    public enum Role
     {
         BEGGINER,
         INSTRUCTOR,

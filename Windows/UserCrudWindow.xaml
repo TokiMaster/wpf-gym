@@ -14,25 +14,33 @@
 
         <Menu Height="20" HorizontalAlignment="Left"
               VerticalAlignment="Top">
-            <MenuItem Header="Users">
+            <MenuItem Header="Tools">
                 <MenuItem Header="Add" 
-                          Name="addUser" />
-                <MenuItem Header="Edit" />
-                <MenuItem Header="Delete" />
+                          Name="addUser"
+                          Click="addUser_Click"/>
+                <MenuItem Header="Edit" 
+                          Name="editUser" 
+                          Click="editUser_Click"/>
+                <MenuItem Header="Delete" 
+                          Name="deleteUser"
+                          Click="deleteUser_Click"/>
                 <Separator/>
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit"
+                          Name="exit"
+                          Click="exit_Click"
+                          Cursor="Hand"/>
             </MenuItem>
         </Menu>
         
         <DataGrid Name="UsersDG" Height="400" Width="800" Background="Transparent">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="100"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="100"/>
-                <DataGridTextColumn Header="Surname" Binding="{Binding surname}" Width="100"/>
-                <DataGridTextColumn Header="Address" Binding="{Binding address}" Width="100"/>
-                <DataGridTextColumn Header="Gender" Binding="{Binding gender}" Width="100"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="100"/>
-                <DataGridTextColumn Header="Role" Binding="{Binding userRole}" Width="100"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" Width="*"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding surname}" Width="*"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding address}" Width="*"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding gender}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding userRole}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

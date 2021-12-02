@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    class Address
+    public class Address
     {
         private int _id;
         private String _streetName;
-        private int _streetNumber;
+        private String _streetNumber;
         private String _city;
         private String _country;
 
@@ -26,7 +26,7 @@ namespace SR23_2020_POP2021.Entities
             set { _streetName = value; }
         }
 
-        public int streetNumber
+        public string streetNumber
         {
             get { return _streetNumber; }
             set { _streetNumber = value; }
@@ -44,7 +44,7 @@ namespace SR23_2020_POP2021.Entities
             set { _country = value; }
         }
 
-        public Address (int id, String streetName, int streetNumber, String city, String country)
+        public Address (int id, String streetName, string streetNumber, String city, String country)
         {
             this._id = id;
             this._streetName = streetName;

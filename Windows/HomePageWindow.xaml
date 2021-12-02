@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        FontFamily="Times new roman bold"
+        FontSize="20"
         Title="HomePageWindow" Height="500" Width="900"
         ResizeMode="NoResize">
     <Grid>
@@ -57,5 +59,49 @@
                 </Button>
             </StackPanel>
         </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="1"
+                   Name="allUsers"
+                   Cursor="Hand" 
+                   MouseDoubleClick="allUsers_MouseDoubleClick">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+                <TextBlock TextDecorations="Underline">All users</TextBlock>
+            </Label>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="2"
+                   Name="training"
+                   Cursor="Hand">
+                <TextBlock TextDecorations="Underline">Training</TextBlock>
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+        </Grid>
     </Grid>
 </Window>

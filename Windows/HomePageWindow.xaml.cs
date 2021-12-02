@@ -32,7 +32,7 @@ namespace SR23_2020_POP2021.Windows
             this.Close();
         }
 
-        private void Label_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void allUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             UserCrudWindow window = new UserCrudWindow();
             window.Show();

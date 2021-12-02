@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    enum Gender
+    public enum Gender
     {
         MALE,
         FEMALE

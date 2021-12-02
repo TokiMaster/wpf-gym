@@ -27,19 +27,19 @@ namespace SR23_2020_POP2021.Windows
         public FitnessCenterForceWindow()
         {
             InitializeComponent();
-            User toki = new User("Toki", "Todor", "Popovic", new Address(1, "Seljackih buna", 93, "Novi Sad", "Srbija"),
-                Gender.MALE, "toki@gmail.com", "toki", Role.ADMINISTRATOR);
-            User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", 14, "Novi Sad", "Srbija"),
-                Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.ADMINISTRATOR);
-            User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", 13, "Novi Sad", "Srbija"),
-                Gender.FEMALE, "maki@gmail.com", "maki", Role.INSTRUCTOR);
-            User niki13 = new User("Niki", "Nikola", "Krstin", new Address(4, "Bulevar Vojvode Stepe", 46, "Novi Sad", "Srbija"),
-                Gender.MALE, "niki13@gmail.com", "niki", Role.INSTRUCTOR);
-            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", 35, "Novi Sad", "Srbija"),
-                Gender.MALE, "bane@gmail.com", "bane", Role.INSTRUCTOR);
-            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", 13, "Novi Sad", "Srbija"),
-                Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR);
-            force = new FitnessCenter(1, "The Force", new Address(7, "Bulevar Oslobodjenja", 85, "Novi Sad", "Srbija"));
+            User toki = new User("Toki", "Todor", "Popovic", new Address(1, "Seljackih buna", "93", "Novi Sad", "Srbija"),
+                Gender.MALE, "toki@gmail.com", "toki", Role.ADMINISTRATOR, false);
+            User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", "14", "Novi Sad", "Srbija"),
+                Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.ADMINISTRATOR, false);
+            User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", "13", "Novi Sad", "Srbija"),
+                Gender.FEMALE, "maki@gmail.com", "maki", Role.INSTRUCTOR, false);
+            User niki13 = new User("Niki", "Nikola", "Krstin", new Address(4, "Bulevar Vojvode Stepe", "46", "Novi Sad", "Srbija"),
+                Gender.MALE, "niki13@gmail.com", "niki", Role.INSTRUCTOR, false);
+            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", "35", "Novi Sad", "Srbija"),
+                Gender.MALE, "bane@gmail.com", "bane", Role.INSTRUCTOR, false);
+            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", "13", "Novi Sad", "Srbija"),
+                Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR, false);
+            force = new FitnessCenter(1, "The Force", new Address(7, "Bulevar Oslobodjenja", "85", "Novi Sad", "Srbija"));
 
             users.Add(vlaki);
             users.Add(toki);

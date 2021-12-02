@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    class User
+    public class User
     {
         private String _username; 
         private String _name;
@@ -16,6 +16,7 @@ namespace SR23_2020_POP2021.Entities
         private String _email;
         private String _password;
         private Role _userRole;
+        private Boolean _isDeleted;
 
 
         public String username
@@ -70,13 +71,20 @@ namespace SR23_2020_POP2021.Entities
             set { _userRole = value; }
         }
 
+        public Boolean isDeleted
+        {
+            get { return _isDeleted; }
+            set { _isDeleted = value; }
+        }
+
+
         public User()
         {
 
         }
 
         public User(String username, String name, String surname, Address address, Gender gender,
-            String email, String password, Role role)
+            String email, String password, Role role, Boolean isDeleted)
         {
             this._username = username;
             this._name = name;
@@ -86,6 +94,7 @@ namespace SR23_2020_POP2021.Entities
             this._email = email;
             this._password = password;
             this._userRole = role;
+            this._isDeleted = isDeleted;
         }
 
     }

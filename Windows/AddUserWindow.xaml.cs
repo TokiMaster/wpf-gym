@@ -15,13 +15,23 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for AddEditUserWindow.xaml
+    /// Interaction logic for AddUserWindow.xaml
     /// </summary>
-    public partial class AddEditUserWindow : Window
+    public partial class AddUserWindow : Window
     {
-        public AddEditUserWindow()
+        public AddUserWindow()
         {
             InitializeComponent();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
