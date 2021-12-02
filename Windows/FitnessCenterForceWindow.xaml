@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="FitnessCenterForceWindow" Height="450" Width="800">
     <Grid>
-        
+        <Image Source="/Images/Lobby.jpg"
+               Stretch="Fill"></Image>
+        <Label Foreground="Black" 
+               FontFamily="Times new roman bold"
+               FontSize="18"
+               Content="Our location" Margin="334,74,-334.4,-74"></Label>
+        <DataGrid Name="InforDG"
+                  Background="Transparent" 
+                  Height="45" Width="300" Margin="22,78,21.6,242">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" 
+                                    Width="60"
+                                    Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Adresa"
+                                    Width="*"
+                                    Binding="{Binding address}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Foreground="Black" 
+               FontFamily="Times new roman bold"
+               FontSize="18"
+               Margin="22,183,-21.4,-183"
+               Content="Our instructors"></Label>
+        <DataGrid Name="UsersDG" 
+                  Background="Transparent" 
+                  Height="200" Width="750"
+                  Margin="0,200,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Width="*" Binding="{Binding username}" />
+                <DataGridTextColumn Header="Name" Width="*" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Surname" Width="*" Binding="{Binding surname}" />
+                <DataGridTextColumn Header="Address" Width="*" Binding="{Binding address}" />
+                <DataGridTextColumn Header="Gender" Width="*" Binding="{Binding gender}" />
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding email}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

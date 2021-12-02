@@ -29,11 +29,18 @@ namespace SR23_2020_POP2021.Entities
             set { _address = value; }
         }
 
+        public FitnessCenter() { }
+
         public FitnessCenter(int id, String name, Address address)
         {
             this._id = id;
             this._name = name;
             this._address = address;
+        }
+
+        public override string ToString()
+        {
+            return "Dobrodosli u fitnes centar \"" + name + "\". Nalazimo se na adresi: " + address;
         }
     }
 }

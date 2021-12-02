@@ -15,7 +15,7 @@
         <StackPanel Orientation="Vertical"
                     VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Top"
+                        VerticalAlignment="Top"
                         FlowDirection="RightToLeft">
                 <Button Width="40"
                         Height="40"
