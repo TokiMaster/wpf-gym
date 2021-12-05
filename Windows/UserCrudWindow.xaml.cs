@@ -61,8 +61,8 @@ namespace SR23_2020_POP2021.Windows
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            HomePageWindow homePage = new HomePageWindow();
-            homePage.Show();
+            AdministratorWindow administratorWindow = new AdministratorWindow();
+            administratorWindow.Show();
             this.Close();
         }
 

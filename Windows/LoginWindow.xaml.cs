@@ -28,9 +28,12 @@ namespace SR23_2020_POP2021.Windows
                 Gender.MALE, "toki@gmail.com", "toki", Role.ADMINISTRATOR, false);
             User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", "14", "Novi Sad", "Srbija"),
                 Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.INSTRUCTOR, false);
+            User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", "13", "Novi Sad", "Srbija"),
+               Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGGINER, false);
 
             users.Add(vlaki);
             users.Add(toki);
+            users.Add(maki);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -45,12 +48,26 @@ namespace SR23_2020_POP2021.Windows
             for (int i = 0; i < users.Count(); i++)
             {
                 User tempUser = users.ElementAt(i);
-                if (tempUser.username.Equals(username.Text) && 
-                    tempUser.password.Equals(password.Text) && !tempUser.isDeleted)
+                if (tempUser.username.Equals(username.Text) && tempUser.password.Equals(password.Password.ToString()) && !tempUser.isDeleted)
                 {
-                    HomePageWindow homePage = new HomePageWindow();
-                    homePage.Show();
-                    this.Close();
+                    if (tempUser.userRole.Equals(Role.ADMINISTRATOR))
+                    {
+                        AdministratorWindow administratorWindow = new AdministratorWindow();
+                        administratorWindow.Show();
+                        this.Close();
+                    } 
+                    else if (tempUser.userRole.Equals(Role.INSTRUCTOR))
+                    {
+                        InstructorWindow instructorWindow = new InstructorWindow();
+                        instructorWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        BegginerWindow begginerWindow = new BegginerWindow();
+                        begginerWindow.Show();
+                        this.Close();
+                    }
                 }
             }
         }

@@ -97,5 +97,10 @@ namespace SR23_2020_POP2021.Entities
             this._isDeleted = isDeleted;
         }
 
+        public override string ToString()
+        {
+            return name;
+        }
+
     }
 }

@@ -16,22 +16,26 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for AddUserWindow.xaml
+    /// Interaction logic for HomePageWindow.xaml
     /// </summary>
-    public partial class AddUserWindow : Window
+    public partial class AdministratorWindow : Window
     {
-        public AddUserWindow()
+        public AdministratorWindow()
         {
             InitializeComponent();
         }
 
-        private void Cancel_Click(object sender, RoutedEventArgs e)
+        private void signOut_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void allUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            UserCrudWindow window = new UserCrudWindow();
+            window.Show();
             this.Close();
         }
     }

@@ -1,5 +1,4 @@
-﻿using SR23_2020_POP2021.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +15,11 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for HomePageWindow.xaml
+    /// Interaction logic for InstructorWindow.xaml
     /// </summary>
-    public partial class HomePageWindow : Window
+    public partial class InstructorWindow : Window
     {
-        public HomePageWindow()
+        public InstructorWindow()
         {
             InitializeComponent();
         }
@@ -29,13 +28,6 @@ namespace SR23_2020_POP2021.Windows
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
-        }
-
-        private void allUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            UserCrudWindow window = new UserCrudWindow();
-            window.Show();
             this.Close();
         }
     }

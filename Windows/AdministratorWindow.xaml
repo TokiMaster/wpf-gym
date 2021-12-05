@@ -1,0 +1,107 @@
+﻿<Window x:Class="SR23_2020_POP2021.Windows.AdministratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Times new roman bold"
+        FontSize="20"
+        Title="AdministratorWindow" Height="500" Width="900"
+        ResizeMode="NoResize">
+    <Grid>
+        <Image Source="/Images/Lobby.jpg"
+               Stretch="Fill"></Image>
+
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        FlowDirection="RightToLeft">
+                <Button Width="40"
+                        Height="40"
+                        Margin="5,5"
+                        Cursor="Hand"
+                        Name="signOut"
+                        Background="Transparent"
+                        Click="signOut_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                    Value="50"/>
+                        </Style>
+                    </Button.Resources>
+                    <Image Source="/Images/sign-out.jpg"
+                           Stretch="Fill" 
+                           Margin="5,5"
+                           Height="30" 
+                           Width="30">
+                    </Image>
+                </Button>
+                <Button Height="40"
+                        Width="40"
+                        Margin="5,5"
+                        Background="Transparent"
+                        Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" 
+                                    Value="50"/>
+                        </Style>
+                    </Button.Resources>
+                    <Image Source="/Images/profileIcon.png"
+                           Stretch="Fill" 
+                           Height="25" 
+                           Width="25"
+                           Margin="0,0,0,3">
+                    </Image>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="1"
+                   Name="allUsers"
+                   Cursor="Hand" 
+                   MouseDoubleClick="allUsers_MouseDoubleClick">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+                <TextBlock TextDecorations="Underline">All users</TextBlock>
+            </Label>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="2"
+                   Name="training"
+                   Cursor="Hand">
+                <TextBlock TextDecorations="Underline">Training</TextBlock>
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,5 +1,4 @@
-﻿using SR23_2020_POP2021.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,22 +15,19 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for AddUserWindow.xaml
+    /// Interaction logic for BegginerWindow.xaml
     /// </summary>
-    public partial class AddUserWindow : Window
+    public partial class BegginerWindow : Window
     {
-        public AddUserWindow()
+        public BegginerWindow()
         {
             InitializeComponent();
         }
 
-        private void Cancel_Click(object sender, RoutedEventArgs e)
+        private void signOut_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }

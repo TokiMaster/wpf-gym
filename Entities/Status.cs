@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    class Instructor
+    public enum Status
     {
-
+        FREE,
+        RESERVED
     }
 }

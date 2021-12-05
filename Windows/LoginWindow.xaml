@@ -45,9 +45,9 @@
                 </TextBox.Resources>
             </TextBox>
 
-            <TextBox Grid.Row="2"
-                     Name="password"
-                     Text="toki"
+            <PasswordBox Grid.Row="2"
+                    Name="password"
+                    Password="toki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"
@@ -56,12 +56,27 @@
                     Background="Transparent"
                     BorderThickness="2"
                     Foreground="White">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="3"/>
+                <!--<PasswordBox.Resources>
+                    <Style TargetType="PasswordBox">
+                        <Setter Property="Template" >
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="2" />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
                     </Style>
-                </TextBox.Resources>
-            </TextBox>
+                </PasswordBox.Resources>-->
+                <PasswordBox.Style>
+                    <Style TargetType="{x:Type PasswordBox}">
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="3" />
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </PasswordBox.Style>
+            </PasswordBox>
 
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
