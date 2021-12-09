@@ -16,13 +16,16 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for HomePageWindow.xaml
+    /// Interaction logic for BegginerWindow.xaml
     /// </summary>
-    public partial class AdministratorWindow : Window
+    public partial class BegginerWindow : Window
     {
-        public AdministratorWindow()
+        User modifyUser;
+        public BegginerWindow(User user)
         {
             InitializeComponent();
+            DataContext = user;
+            modifyUser = user;
         }
 
         private void signOut_Click(object sender, RoutedEventArgs e)
@@ -32,11 +35,10 @@ namespace SR23_2020_POP2021.Windows
             this.Close();
         }
 
-        private void allUsers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void myProfile_Click(object sender, RoutedEventArgs e)
         {
-            UserCrudWindow window = new UserCrudWindow();
-            window.Show();
-            this.Close();
+            MyProfileWindow myProfileWindow = new MyProfileWindow(modifyUser);
+            myProfileWindow.Show();
         }
     }
 }

@@ -32,11 +32,11 @@ namespace SR23_2020_POP2021.Windows
             User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", "14", "Novi Sad", "Srbija"),
                 Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.ADMINISTRATOR, false);
             User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", "13", "Novi Sad", "Srbija"),
-                Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGGINER, false);
+                Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGINNER, false);
             User niki13 = new User("Niki", "Nikola", "Krstin", new Address(4, "Bulevar Vojvode Stepe", "46", "Novi Sad", "Srbija"),
                 Gender.MALE, "niki13@gmail.com", "niki", Role.INSTRUCTOR, false);
             User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", "35", "Novi Sad", "Srbija"),
-                Gender.MALE, "bane@gmail.com", "bane", Role.BEGGINER, true);
+                Gender.MALE, "bane@gmail.com", "bane", Role.BEGINNER, true);
             User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", "13", "Novi Sad", "Srbija"),
                 Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR, false);
 
@@ -61,9 +61,9 @@ namespace SR23_2020_POP2021.Windows
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
-            AdministratorWindow administratorWindow = new AdministratorWindow();
-            administratorWindow.Show();
-            this.Close();
+            //AdministratorWindow administratorWindow = new AdministratorWindow();
+            //administratorWindow.Show();
+            //this.Close();
         }
 
         private void addUser_Click(object sender, RoutedEventArgs e)

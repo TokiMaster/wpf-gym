@@ -29,11 +29,20 @@ namespace SR23_2020_POP2021.Windows
             User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", "14", "Novi Sad", "Srbija"),
                 Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.INSTRUCTOR, false);
             User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", "13", "Novi Sad", "Srbija"),
-               Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGGINER, false);
+                Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGINNER, false);
+            User niki13 = new User("Niki", "Nikola", "Krstin", new Address(4, "Bulevar Vojvode Stepe", "46", "Novi Sad", "Srbija"),
+                Gender.MALE, "niki13@gmail.com", "niki", Role.INSTRUCTOR, false);
+            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", "35", "Novi Sad", "Srbija"),
+                Gender.MALE, "bane@gmail.com", "bane", Role.BEGINNER, true);
+            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", "13", "Novi Sad", "Srbija"),
+                Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR, false);
 
             users.Add(vlaki);
             users.Add(toki);
             users.Add(maki);
+            users.Add(niki13);
+            users.Add(banex);
+            users.Add(zoki);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -52,19 +61,19 @@ namespace SR23_2020_POP2021.Windows
                 {
                     if (tempUser.userRole.Equals(Role.ADMINISTRATOR))
                     {
-                        AdministratorWindow administratorWindow = new AdministratorWindow();
+                        AdministratorWindow administratorWindow = new AdministratorWindow(tempUser);
                         administratorWindow.Show();
                         this.Close();
-                    } 
+                    }
                     else if (tempUser.userRole.Equals(Role.INSTRUCTOR))
                     {
-                        InstructorWindow instructorWindow = new InstructorWindow();
+                        InstructorWindow instructorWindow = new InstructorWindow(tempUser);
                         instructorWindow.Show();
                         this.Close();
                     }
                     else
                     {
-                        BegginerWindow begginerWindow = new BegginerWindow();
+                        BegginerWindow begginerWindow = new BegginerWindow(tempUser);
                         begginerWindow.Show();
                         this.Close();
                     }

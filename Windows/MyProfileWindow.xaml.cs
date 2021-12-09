@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SR23_2020_POP2021.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,19 +16,25 @@ using System.Windows.Shapes;
 namespace SR23_2020_POP2021.Windows
 {
     /// <summary>
-    /// Interaction logic for InstructorWindow.xaml
+    /// Interaction logic for MyProfileWindow.xaml
     /// </summary>
-    public partial class InstructorWindow : Window
+    public partial class MyProfileWindow : Window
     {
-        public InstructorWindow()
+        User modifyUser;
+        public MyProfileWindow(User user)
         {
             InitializeComponent();
+            DataContext = user;
+            modifyUser = user;
         }
 
-        private void signOut_Click(object sender, RoutedEventArgs e)
+        private void save_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

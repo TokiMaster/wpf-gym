@@ -8,7 +8,7 @@ namespace SR23_2020_POP2021.Entities
 {
     public enum Role
     {
-        BEGGINER,
+        BEGINNER,
         INSTRUCTOR,
         ADMINISTRATOR
     }

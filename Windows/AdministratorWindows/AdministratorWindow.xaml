@@ -42,7 +42,9 @@
                 <Button Height="40"
                         Width="40"
                         Margin="5,5"
+                        Name="myProfile"
                         Background="Transparent"
+                        Click="myProfile_Click"
                         Cursor="Hand">
                     <Button.Resources>
                         <Style TargetType="Border">
