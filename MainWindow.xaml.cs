@@ -24,6 +24,7 @@ namespace SR23_2020_POP2021
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void login_Click(object sender, RoutedEventArgs e)

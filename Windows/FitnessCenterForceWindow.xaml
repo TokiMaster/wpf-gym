@@ -15,7 +15,7 @@
                FontFamily="Times new roman bold"
                FontSize="18"
                Content="Our location" Margin="334,74,-334.4,-74"></Label>
-        <DataGrid Name="InforDG"
+        <DataGrid Name="InfoDG"
                   Background="Transparent" 
                   Height="45" Width="300" Margin="22,78,21.6,242">
             <DataGrid.Columns>

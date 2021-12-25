@@ -13,7 +13,7 @@ namespace SR23_2020_POP2021.Entities
         private TimeSpan _duration;
         private Status _status;
         private User _instructor;
-        private User _begginer;
+        private User _beginner;
 
         public int id
         {
@@ -43,11 +43,24 @@ namespace SR23_2020_POP2021.Entities
             get { return _instructor; }
             set { _instructor = value; }
         }
-        public User begginer
+        public User beginner
         {
-            get { return _begginer; }
-            set { _begginer = value; }
+            get { return _beginner; }
+            set { _beginner = value; }
         }
 
+        public Training()
+        {
+
+        }
+        public Training(int id, DateTime startTime,TimeSpan duration, Status status, User instructor, User beginner)
+        {
+            this._id = id;
+            this._startDate = startTime;
+            this._duration = duration;
+            this._status = status;
+            this._instructor = instructor;
+            this._beginner = beginner;
+        }
     }
 }

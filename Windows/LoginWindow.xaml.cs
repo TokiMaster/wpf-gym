@@ -1,4 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,25 +25,7 @@ namespace SR23_2020_POP2021.Windows
         public LoginWindow()
         {
             InitializeComponent();
-            User toki = new User("Toki", "Todor", "Popovic", new Address(1, "Seljackih buna", "93", "Novi Sad", "Srbija"),
-                Gender.MALE, "toki@gmail.com", "toki", Role.ADMINISTRATOR, false);
-            User vlaki = new User("Vlaki", "Vladica", "Jeremic", new Address(2, "Orlovica Pavla", "14", "Novi Sad", "Srbija"),
-                Gender.FEMALE, "vlaki@gmail.com", "vlaki", Role.INSTRUCTOR, false);
-            User maki = new User("Maki", "Marija", "Jelaca", new Address(3, "Bate Brkica", "13", "Novi Sad", "Srbija"),
-                Gender.FEMALE, "maki@gmail.com", "maki", Role.BEGINNER, false);
-            User niki13 = new User("Niki", "Nikola", "Krstin", new Address(4, "Bulevar Vojvode Stepe", "46", "Novi Sad", "Srbija"),
-                Gender.MALE, "niki13@gmail.com", "niki", Role.INSTRUCTOR, false);
-            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", "35", "Novi Sad", "Srbija"),
-                Gender.MALE, "bane@gmail.com", "bane", Role.BEGINNER, true);
-            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", "13", "Novi Sad", "Srbija"),
-                Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR, false);
-
-            users.Add(vlaki);
-            users.Add(toki);
-            users.Add(maki);
-            users.Add(niki13);
-            users.Add(banex);
-            users.Add(zoki);
+            users = UserService.ReadUsers();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -54,26 +37,25 @@ namespace SR23_2020_POP2021.Windows
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < users.Count(); i++)
+            foreach (User user in users)
             {
-                User tempUser = users.ElementAt(i);
-                if (tempUser.username.Equals(username.Text) && tempUser.password.Equals(password.Password.ToString()) && !tempUser.isDeleted)
+                if (user.username.Equals(username.Text) && user.password.Equals(password.Password.ToString()) && user.isDeleted.Equals(false))
                 {
-                    if (tempUser.userRole.Equals(Role.ADMINISTRATOR))
+                    if (user.userRole.Equals(Role.ADMINISTRATOR))
                     {
-                        AdministratorWindow administratorWindow = new AdministratorWindow(tempUser);
+                        AdministratorWindow administratorWindow = new AdministratorWindow(user);
                         administratorWindow.Show();
                         this.Close();
                     }
-                    else if (tempUser.userRole.Equals(Role.INSTRUCTOR))
+                    else if (user.userRole.Equals(Role.INSTRUCTOR))
                     {
-                        InstructorWindow instructorWindow = new InstructorWindow(tempUser);
+                        InstructorWindow instructorWindow = new InstructorWindow(user);
                         instructorWindow.Show();
                         this.Close();
                     }
                     else
                     {
-                        BegginerWindow begginerWindow = new BegginerWindow(tempUser);
+                        BegginerWindow begginerWindow = new BegginerWindow(user);
                         begginerWindow.Show();
                         this.Close();
                     }

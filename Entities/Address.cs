@@ -13,6 +13,7 @@ namespace SR23_2020_POP2021.Entities
         private String _streetNumber;
         private String _city;
         private String _country;
+        private Boolean _isDeleted;
 
         public int id
         {
@@ -43,14 +44,25 @@ namespace SR23_2020_POP2021.Entities
             get { return _country; }
             set { _country = value; }
         }
+        public Boolean isDeleted
+        {
+            get { return _isDeleted; }
+            set { _isDeleted = value; }
+        }
 
-        public Address (int id, String streetName, string streetNumber, String city, String country)
+        public Address()
+        {
+
+        }
+
+        public Address (int id, String streetName, string streetNumber, String city, String country, Boolean isDeleted)
         {
             this._id = id;
             this._streetName = streetName;
             this._streetNumber = streetNumber;
             this._city = city;
             this._country = country;
+            this._isDeleted = isDeleted;
         }
 
         public override string ToString()

@@ -1,4 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Windows.InstructorWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,13 @@ namespace SR23_2020_POP2021.Windows
         {
             MyProfileWindow myProfileWindow = new MyProfileWindow(modifyUser);
             myProfileWindow.Show();
+        }
+
+        private void myTrainings_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MyTrainingsWindow myTrainingsWindow = new MyTrainingsWindow();
+            myTrainingsWindow.Show();
+            this.Close();
         }
     }
 }
