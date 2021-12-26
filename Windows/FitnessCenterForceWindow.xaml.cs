@@ -1,4 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Service;
 using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,14 @@ namespace SR23_2020_POP2021.Windows
     {
 
         List<User> users = new List<User>();
-        FitnessCenter force;
+        FitnessCenter force = new FitnessCenter();
 
         public FitnessCenterForceWindow()
         {
             InitializeComponent();
 
-            force = new FitnessCenter(1, "The Force", new Address(11, "Bulevar Oslobodjenja", "85", "Novi Sad", "Srbija", false));
-
             users = UserService.ReadUsers();
+            force = FitnessCenterService.ReadFitnessCenter();
 
             foreach (User user in users)
             {
@@ -40,8 +40,7 @@ namespace SR23_2020_POP2021.Windows
                     UsersDG.Items.Add(user);
                 }
             }
-
-            InfoDG.Items.Add(force);
-            }
+            InfoDG.Items.Add(force); 
         }
+    }
 }

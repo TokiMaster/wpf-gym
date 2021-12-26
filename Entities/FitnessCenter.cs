@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SR23_2020_POP2021.Entities
 {
-    class FitnessCenter
+    public class FitnessCenter
     {
         private int _id;
         private String _name;

@@ -15,11 +15,11 @@ namespace SR23_2020_POP2021.Service
         {
             List<Address> addresses = new List<Address>();
 
-            using (SqlConnection conn = new SqlConnection(Util.CONNECTION_STRING))
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
             {
-                conn.Open();
-                SqlCommand command = conn.CreateCommand();
-                command.CommandText = @"select * from dbo.Address";
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"select * from Address where isDeleted = 0";
 
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -28,7 +28,7 @@ namespace SR23_2020_POP2021.Service
                     {
                         id = reader.GetInt32(0),
                         streetName = reader.GetString(1),
-                        streetNumber = reader.GetString(2),
+                        streetNumber = reader.GetInt32(2),
                         city = reader.GetString(3),
                         country = reader.GetString(4),
                         isDeleted = reader.GetBoolean(5)
@@ -39,28 +39,30 @@ namespace SR23_2020_POP2021.Service
             return addresses;
         }
 
-        public Address findOneByID(int id)
+        public static Address findOneByID(int id)
         {
-            using (SqlConnection conn = new SqlConnection(Util.CONNECTION_STRING))
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
             {
-                conn.Open();
-                SqlCommand command = conn.CreateCommand();
-                command.CommandText = @"select * from dbo.Address where id = @id";
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"select * from Address where id = @id and isDeleted = 0";
                 command.Parameters.Add(new SqlParameter("id", id));
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    return new Address
+                    if (reader.Read())
                     {
-                        id = reader.GetInt32(0),
-                        streetName = reader.GetString(1),
-                        streetNumber = reader.GetString(2),
-                        city = reader.GetString(3),
-                        country = reader.GetString(4),
-                        isDeleted = reader.GetBoolean(5)
-                    };
+                        return new Address
+                        {
+                            id = reader.GetInt32(0),
+                            streetName = reader.GetString(1),
+                            streetNumber = reader.GetInt32(2),
+                            city = reader.GetString(3),
+                            country = reader.GetString(4),
+                            isDeleted = reader.GetBoolean(5)
+                        };
+                    }
+                    return null;
                 }
-                return null;
             }
         }
     }

@@ -23,9 +23,9 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
         public MyTrainingsWindow()
         {
             InitializeComponent();
-            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", "35", "Novi Sad", "Srbija", false),
+            User banex = new User("Bane", "Branko", "Strbac", new Address(5, "Varga Djule", 25, "Novi Sad", "Srbija", false),
                 Gender.MALE, "bane@gmail.com", "bane", Role.BEGINNER, true);
-            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", "13", "Novi Sad", "Srbija", false),
+            User zoki = new User("Zoki", "Zoran", "Majovski", new Address(6, "Kosancic Ivana", 13, "Novi Sad", "Srbija", false),
                 Gender.MALE, "zoki@gmail.com", "zoki", Role.INSTRUCTOR, false);
             Training training = new Training();
             training.id = 1;

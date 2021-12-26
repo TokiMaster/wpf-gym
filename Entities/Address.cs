@@ -10,7 +10,7 @@ namespace SR23_2020_POP2021.Entities
     {
         private int _id;
         private String _streetName;
-        private String _streetNumber;
+        private int _streetNumber;
         private String _city;
         private String _country;
         private Boolean _isDeleted;
@@ -27,7 +27,7 @@ namespace SR23_2020_POP2021.Entities
             set { _streetName = value; }
         }
 
-        public string streetNumber
+        public int streetNumber
         {
             get { return _streetNumber; }
             set { _streetNumber = value; }
@@ -55,7 +55,7 @@ namespace SR23_2020_POP2021.Entities
 
         }
 
-        public Address (int id, String streetName, string streetNumber, String city, String country, Boolean isDeleted)
+        public Address (int id, String streetName, int streetNumber, String city, String country, Boolean isDeleted)
         {
             this._id = id;
             this._streetName = streetName;
