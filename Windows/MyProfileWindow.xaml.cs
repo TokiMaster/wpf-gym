@@ -1,4 +1,6 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Service;
+using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +32,8 @@ namespace SR23_2020_POP2021.Windows
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            AddressService.editAddress(modifyUser.address);
+            UserService.editUser(modifyUser);
             this.Close();
         }
 

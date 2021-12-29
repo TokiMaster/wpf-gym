@@ -34,11 +34,8 @@ namespace SR23_2020_POP2021.Windows
             addresses = AddressService.ReadAddresses();
             foreach (User user in users)
             {
-                if (!user.isDeleted) { 
-                    if (!user.userRole.Equals(Role.ADMINISTRATOR))
-                    {
-                        UsersDG.Items.Add(user);
-                    }
+                if (!user.isDeleted) {     
+                    UsersDG.Items.Add(user);
                 }
             }
         }
@@ -80,7 +77,7 @@ namespace SR23_2020_POP2021.Windows
             if(MessageBox.Show("Are you sure you want to delete " + deleteUser.username,
                 "Delete " + deleteUser.username, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
-                deleteUser.isDeleted = true;
+                UserService.deleteUser(deleteUser);
                 updateView();
             }
             else

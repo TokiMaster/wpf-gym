@@ -22,7 +22,7 @@
                 <DataGridTextColumn Header="Name" 
                                     Width="60"
                                     Binding="{Binding name}"/>
-                <DataGridTextColumn Header="Adresa"
+                <DataGridTextColumn Header="Address "
                                     Width="*"
                                     Binding="{Binding address}"/>
             </DataGrid.Columns>

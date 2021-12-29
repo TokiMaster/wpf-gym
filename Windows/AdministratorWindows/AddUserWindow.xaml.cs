@@ -1,4 +1,6 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Service;
+using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,8 @@ namespace SR23_2020_POP2021.Windows
         public AddUserWindow()
         {
             InitializeComponent();
+            gender.ItemsSource = Enum.GetValues(typeof(Gender)).Cast<Gender>();
+            role.ItemsSource = Enum.GetValues(typeof(Role)).Cast<Role>();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -32,6 +36,31 @@ namespace SR23_2020_POP2021.Windows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            int streetNo = int.Parse(streetNumber.Text);
+
+            Address newAddress = new Address
+            {
+                streetName = streetName.Text,
+                streetNumber = streetNo,
+                city = city.Text,
+                country = country.Text
+            };
+
+            int id = AddressService.createNewAddress(newAddress);
+
+            User newUser = new User
+            {
+                username = username.Text,
+                name = name.Text,
+                surname = surname.Text,
+                gender = (Gender)gender.SelectedItem,
+                address = AddressService.findOneByID(id),
+                email = email.Text,
+                password = password.Text,
+                userRole = (Role) role.SelectedItem
+            };
+
+            UserService.createNewUser(newUser);
             this.Close();
         }
     }

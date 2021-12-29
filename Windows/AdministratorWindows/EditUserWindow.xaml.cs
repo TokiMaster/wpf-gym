@@ -1,4 +1,6 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Service;
+using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,8 @@ namespace SR23_2020_POP2021.Windows
         public EditUserWindow(User user)
         {
             InitializeComponent();
+            gender.ItemsSource = Enum.GetValues(typeof(Gender)).Cast<Gender>();
+            role.ItemsSource = Enum.GetValues(typeof(Role)).Cast<Role>();
             DataContext = user;
             modifyUser = user;
         }
@@ -35,19 +39,8 @@ namespace SR23_2020_POP2021.Windows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            //User newUser = new User();
-            //newUser.username = username.Text;
-            //newUser.name = name.Text;
-            //newUser.surname = name.Text;
-            //newUser.gender = (Gender) gender.SelectedItem;
-            //newUser.address.id = 10;
-            //newUser.address.streetName = streetName.Text;
-            //newUser.address.streetNumber = streetNumber.Text;
-            //newUser.address.city = city.Text;
-            //newUser.address.country = country.Text;
-            //newUser.email = email.Text;
-            //newUser.password = "";
-            //UserCrudWindow.users.Add(newUser);
+            AddressService.editAddress(modifyUser.address);
+            UserService.editUser(modifyUser);
             this.Close();
         }
 

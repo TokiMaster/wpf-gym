@@ -154,8 +154,6 @@
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
                           HorizontalAlignment="Left">
-                    <ComboBoxItem IsSelected="True">MALE</ComboBoxItem>
-                    <ComboBoxItem>FEMALE</ComboBoxItem>
                 </ComboBox>
             </Grid>
 
@@ -347,9 +345,6 @@
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
                           HorizontalAlignment="Left">
-                    <ComboBoxItem IsSelected="True">INSTRUCTOR</ComboBoxItem>
-                    <ComboBoxItem>BEGGINER</ComboBoxItem>
-                    <ComboBoxItem>ADMINISTRATOR</ComboBoxItem>
                 </ComboBox>
             </Grid>
 
@@ -359,16 +354,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Password:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Password:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="password"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"

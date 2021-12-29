@@ -39,7 +39,7 @@ namespace SR23_2020_POP2021.Windows
         {
             UserCrudWindow window = new UserCrudWindow();
             window.Show();
-            this.Close();
+            //this.Close();
         }
 
         private void myProfile_Click(object sender, RoutedEventArgs e)

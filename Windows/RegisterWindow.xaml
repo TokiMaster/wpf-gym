@@ -9,6 +9,7 @@
         Title="RegisterWindow" Height="750" Width="475"
         WindowStyle="None" ResizeMode="NoResize">
     <Grid>
+
         <Image Source="/Images/FitnessCentreBgImg.jpg"
                Stretch="Fill"/>
         <Grid>
@@ -41,16 +42,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Username:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Username:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="username"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -74,16 +76,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="2" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Name:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Name:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="name"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -107,16 +110,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Surname:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Surname:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="surname"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -139,24 +143,23 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Gender:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Gender:
                 </Label>
 
                 <ComboBox Grid.Row="1"
-                     Grid.Column="1"
-                     Height="30"
-                     Width="275"
-                     HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left">
-                    <ComboBoxItem IsSelected="True">MALE</ComboBoxItem>
-                    <ComboBoxItem>FEMALE</ComboBoxItem>
+                          Name="gender"
+                          Grid.Column="1"
+                          Height="30"
+                          Width="275"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          HorizontalAlignment="Left">
                 </ComboBox>
             </Grid>
 
@@ -166,16 +169,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Street:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Street:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="streetName"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -198,16 +202,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Street number:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Street number:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="streetNumber"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -230,16 +235,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">City:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">City:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="city"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -262,16 +268,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Country:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Country:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="country"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -294,16 +301,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Email:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Email:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="email"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -326,16 +334,17 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
-                   Grid.Column="0"
-                   FontSize="15" 
-                   VerticalAlignment="Center" 
-                   HorizontalAlignment="Left"
-                   Margin="20,0,0,0"
-                   FontFamily="Times new roman bold" 
-                   Foreground="White">Password:
+                       Grid.Column="0"
+                       FontSize="15" 
+                       VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       Margin="20,0,0,0"
+                       FontFamily="Times new roman bold" 
+                       Foreground="White">Password:
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="password"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"

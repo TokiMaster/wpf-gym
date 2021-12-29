@@ -65,5 +65,43 @@ namespace SR23_2020_POP2021.Service
                 }
             }
         }
+
+        public static int createNewAddress(Address newAddress)
+        {
+            using(SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"insert into Address (streetName, streetNumber, city, country)
+                                        output inserted.id values (@streetName, @streetNumber, @city, @country)";
+
+                command.Parameters.Add(new SqlParameter("streetName", newAddress.streetName));
+                command.Parameters.Add(new SqlParameter("streetNumber", newAddress.streetNumber));
+                command.Parameters.Add(new SqlParameter("city", newAddress.city));
+                command.Parameters.Add(new SqlParameter("country", newAddress.country));
+
+                return (int)command.ExecuteScalar();
+            }
+        }
+
+        public static void editAddress(Address editedAddress)
+        {
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"update Address set streetName = @streetName, streetNumber = @streetNumber, 
+                                       city = @city, country = @country where id = @id";
+
+                command.Parameters.Add(new SqlParameter("id", editedAddress.id));
+                command.Parameters.Add(new SqlParameter("streetName", editedAddress.streetName));
+                command.Parameters.Add(new SqlParameter("streetNumber", editedAddress.streetNumber));
+                command.Parameters.Add(new SqlParameter("city", editedAddress.city));
+                command.Parameters.Add(new SqlParameter("country", editedAddress.country));
+
+                SqlDataReader reader = command.ExecuteReader();
+            }
+        }
+
     }
 }
