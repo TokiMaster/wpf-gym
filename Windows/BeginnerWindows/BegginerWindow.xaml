@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
+        FontFamily="Times new roman bold"
+        FontSize="20"
         WindowStartupLocation="CenterScreen"
         Title="BegginerWindow" Height="450" Width="800">
     <Grid>
@@ -58,5 +60,50 @@
                 </Button>
             </StackPanel>
         </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="1"
+                   Name="reservation"
+                   Cursor="Hand"
+                   MouseDoubleClick="reservation_MouseDoubleClick">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+                <TextBlock TextDecorations="Underline">Make a reservation</TextBlock>
+            </Label>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Row="2"
+                   Name="myReservations"
+                   Cursor="Hand"
+                   MouseDoubleClick="myReservations_MouseDoubleClick">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Blue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+                <TextBlock TextDecorations="Underline">My reservations</TextBlock>
+            </Label>
+        </Grid>
     </Grid>
 </Window>

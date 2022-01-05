@@ -14,6 +14,7 @@ namespace SR23_2020_POP2021.Entities
         private Status _status;
         private User _instructor;
         private User _beginner;
+        private Boolean _isDeleted;
 
         public int id
         {
@@ -49,11 +50,17 @@ namespace SR23_2020_POP2021.Entities
             set { _beginner = value; }
         }
 
+        public Boolean isDeleted
+        {
+            get { return _isDeleted; }
+            set { _isDeleted = value; }
+        }
+
         public Training()
         {
 
         }
-        public Training(int id, DateTime startTime,TimeSpan duration, Status status, User instructor, User beginner)
+        public Training(int id, DateTime startTime,TimeSpan duration, Status status, User instructor, User beginner, Boolean isDeleted)
         {
             this._id = id;
             this._startDate = startTime;
@@ -61,6 +68,7 @@ namespace SR23_2020_POP2021.Entities
             this._status = status;
             this._instructor = instructor;
             this._beginner = beginner;
+            this._isDeleted = isDeleted;
         }
     }
 }

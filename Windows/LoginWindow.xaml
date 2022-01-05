@@ -29,15 +29,15 @@
 
             <TextBox Grid.Row="1"
                      Name="username"
-                     Text="Toki"
-                    Width="200"
-                    Height="35"
-                    HorizontalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Background="Transparent"
-                    BorderThickness="2"
-                    Foreground="White">
+                     Text="Vlaki"
+                     Width="200"
+                     Height="35"
+                     HorizontalAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     Background="Transparent"
+                     BorderThickness="2"
+                     Foreground="White">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="3"/>
@@ -47,7 +47,7 @@
 
             <PasswordBox Grid.Row="2"
                     Name="password"
-                    Password="toki"
+                    Password="vlaki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"

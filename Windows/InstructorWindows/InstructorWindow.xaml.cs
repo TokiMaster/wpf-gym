@@ -44,9 +44,8 @@ namespace SR23_2020_POP2021.Windows
 
         private void myTrainings_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MyTrainingsWindow myTrainingsWindow = new MyTrainingsWindow();
+            MyTrainingsWindow myTrainingsWindow = new MyTrainingsWindow(modifyUser);
             myTrainingsWindow.Show();
-            this.Close();
         }
     }
 }

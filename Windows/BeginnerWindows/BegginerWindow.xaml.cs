@@ -1,4 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Windows.BeginnerWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,19 @@ namespace SR23_2020_POP2021.Windows
         {
             MyProfileWindow myProfileWindow = new MyProfileWindow(modifyUser);
             myProfileWindow.Show();
+        }
+
+
+        private void reservation_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MakeReservationWindow makeReservationWindow = new MakeReservationWindow();
+            makeReservationWindow.Show();
+        }
+
+        private void myReservations_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MyReservationsWindow myReservationsWindow = new MyReservationsWindow(modifyUser);
+            myReservationsWindow.Show();
         }
     }
 }

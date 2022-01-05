@@ -102,6 +102,5 @@ namespace SR23_2020_POP2021.Service
                 SqlDataReader reader = command.ExecuteReader();
             }
         }
-
     }
 }

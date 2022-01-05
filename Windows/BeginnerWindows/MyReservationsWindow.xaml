@@ -1,0 +1,25 @@
+﻿<Window x:Class="SR23_2020_POP2021.Windows.BeginnerWindows.MyReservationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR23_2020_POP2021.Windows.InstructorWindows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="MyTrainingsWindow" 
+        Height="450" Width="800">
+    <Grid>
+        <Image Source="/Images/Lobby.jpg" Stretch="Fill"/>
+        <DataGrid Name="trainingsDG"
+            Height="350" Width="700" Background="Transparent">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding ="{Binding Path=date}"  Width="*"/>
+                <DataGridTextColumn Header="Duration" Binding ="{Binding Path=duration}" Width="*"/>
+                <DataGridTextColumn Header="Status" Binding ="{Binding Path=status}" Width="*"/>
+                <DataGridTextColumn Header="Instructor" Binding ="{Binding Path=instructor}" Width="*"/>
+                <DataGridTextColumn Header="Beginner" Binding ="{Binding Path=beginner}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

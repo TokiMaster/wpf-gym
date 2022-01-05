@@ -1,5 +1,6 @@
-﻿using System;
-using SR23_2020_POP2021.Entities;
+﻿using SR23_2020_POP2021.Entities;
+using SR23_2020_POP2021.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,29 +13,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using SR23_2020_POP2021.Service;
 
-namespace SR23_2020_POP2021.Windows.InstructorWindows
+namespace SR23_2020_POP2021.Windows.AdministratorWindows
 {
     /// <summary>
-    /// Interaction logic for MyTrainingsWindow.xaml
+    /// Interaction logic for AllTrainingsWindow.xaml
     /// </summary>
-    public partial class MyTrainingsWindow : Window
+    public partial class AllTrainingsWindow : Window
     {
+
         List<Training> trainings;
-        
-        public MyTrainingsWindow(User user)
+
+        public AllTrainingsWindow()
         {
             InitializeComponent();
-            DataContext = user;
             trainings = TrainingService.ReadTrainings();
-            foreach(Training training in trainings)
+            foreach (Training training in trainings)
             {
-                if (training.instructor.username.Equals(user.username))
-                {
-                    trainingsDG.Items.Add(training);
-                }
+                trainingsDG.Items.Add(training);                
             }
+
         }
     }
 }

@@ -90,9 +90,10 @@
             <Label VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Grid.Row="2"
-                   Name="training"
-                   Cursor="Hand">
-                <TextBlock TextDecorations="Underline">Training</TextBlock>
+                   Name="trainings"
+                   Cursor="Hand"
+                   MouseDoubleClick="trainings_MouseDoubleClick">
+                <TextBlock TextDecorations="Underline">Trainings</TextBlock>
                 <Label.Style>
                     <Style TargetType="Label">
                         <Setter Property="Foreground" Value="Black" />
