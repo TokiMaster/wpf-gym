@@ -29,10 +29,39 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
             trainings = TrainingService.ReadTrainings();
             foreach (Training training in trainings)
             {
-                if (training.beginner.username.Equals(user.username))
+                if(training.beginner != null)
                 {
-                    trainingsDG.Items.Add(training);
+                    if (training.beginner.username.Equals(user.username) && training.status.Equals(Status.RESERVED))
+                    {
+                        trainingsDG.Items.Add(training);
+                    }
                 }
+            }
+        }
+
+        public void updateView()
+        {
+            trainingsDG.Items.Filter = new Predicate<object>(view_Filter);
+        }
+
+        private bool view_Filter(object t)
+        {
+            Training training = t as Training;
+            return !training.status.Equals(Status.FREE) && training.beginner!=null;
+        }
+
+        private void cancelReservation_Click(object sender, RoutedEventArgs e)
+        {
+            Training cancelTraining = (Training)trainingsDG.SelectedItem;
+
+            if (MessageBox.Show("Are you sure you want to cancel training on " + cancelTraining.date.ToShortDateString() + 
+                " at " + cancelTraining.date.Hour + ":" + cancelTraining.date.Minute,
+                "Cancel training" , MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                TrainingService.cancelReservation(cancelTraining);
+                cancelTraining.status = Status.FREE;
+                cancelTraining.beginner = null;
+                updateView();
             }
         }
     }

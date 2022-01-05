@@ -11,6 +11,22 @@
         Height="450" Width="800">
     <Grid>
         <Image Source="/Images/Lobby.jpg" Stretch="Fill"/>
+        
+        <Menu Height="20" HorizontalAlignment="Left"
+              VerticalAlignment="Top">
+            <MenuItem Header="Tools">
+                <MenuItem Header="Add" 
+                          Name="addTraining"
+                          Click="addTraining_Click"/>
+                <MenuItem Header="Edit" 
+                          Name="editTraining" 
+                          Click="editTraining_Click"/>
+                <MenuItem Header="Delete" 
+                          Name="deleteTraining"
+                          Click="deleteTraining_Click"/>
+            </MenuItem>
+        </Menu>
+        
         <DataGrid Name="trainingsDG"
             Height="350" Width="700" Background="Transparent">
             <DataGrid.Columns>

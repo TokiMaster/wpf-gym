@@ -1,5 +1,6 @@
 ﻿using SR23_2020_POP2021.Entities;
 using SR23_2020_POP2021.Service;
+using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,13 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
     {
 
         List<Training> trainings;
+        User user1;
 
-        public MakeReservationWindow()
+        public MakeReservationWindow(User user)
         {
             InitializeComponent();
+            DataContext = user;
+            user1 = user;
             trainings = TrainingService.ReadTrainings();
             foreach (Training training in trainings)
             {
@@ -34,6 +38,32 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
                 {
                     trainingsDG.Items.Add(training);
                 }
+            }
+        }
+
+        public void updateView()
+        {
+            trainingsDG.Items.Filter = new Predicate<object>(view_Filter);
+        }
+
+        private bool view_Filter(object t)
+        {
+            Training training = t as Training;
+            return !training.status.Equals(Status.RESERVED) && training.beginner == null;
+        }
+
+        private void Reserve_Click(object sender, RoutedEventArgs e)
+        {
+            Training reserveTraining = (Training)trainingsDG.SelectedItem;
+
+            if (MessageBox.Show("Are you sure you want to make reservation on " + reserveTraining.date.ToShortDateString() +
+                " at " + reserveTraining.date.Hour + ":" + reserveTraining.date.Minute,
+                "Make reservation", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                reserveTraining.beginner = user1;
+                TrainingService.reserveTraining(reserveTraining);
+                reserveTraining.status = Status.RESERVED;
+                updateView();
             }
         }
     }

@@ -32,7 +32,39 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             {
                 trainingsDG.Items.Add(training);                
             }
+        }
 
+        public void updateView()
+        {
+            trainingsDG.Items.Filter = new Predicate<object>(view_Filter);
+        }
+
+        private bool view_Filter(object t)
+        {
+            Training training = t as Training;
+            return !training.isDeleted;
+        }
+
+        private void addTraining_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void editTraining_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void deleteTraining_Click(object sender, RoutedEventArgs e)
+        {
+            Training deleteTraining = (Training)trainingsDG.SelectedItem;
+            if (MessageBox.Show("Are you sure you want to delete training id = " + deleteTraining.id,
+                "Delete " + deleteTraining.id, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                TrainingService.deleteTrainingAdmin(deleteTraining);
+                deleteTraining.isDeleted = true;
+                updateView();
+            }
         }
     }
 }

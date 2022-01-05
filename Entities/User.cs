@@ -99,7 +99,7 @@ namespace SR23_2020_POP2021.Entities
 
         public override string ToString()
         {
-            return name;
+            return name + " " + surname;
         }
 
     }

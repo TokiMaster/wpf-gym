@@ -24,6 +24,13 @@ namespace SR23_2020_POP2021.Service
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    User user = null;
+
+                    if (!reader.IsDBNull(5))
+                    {
+                        user = UserService.findUserByUsername(reader.GetString(5));
+                    }
+
                     trainings.Add(new Training
                     {
                         id = reader.GetInt32(0),
@@ -31,13 +38,67 @@ namespace SR23_2020_POP2021.Service
                         duration = TimeSpan.FromMinutes(reader.GetInt32(2)),
                         status = (Status) reader.GetInt32(3),
                         instructor = UserService.findUserByUsername(reader.GetString(4)),
-                        beginner = UserService.findUserByUsername(reader.GetString(5)),
+                        beginner = user,
                         isDeleted = reader.GetBoolean(6)
                     });
                 }
                 reader.Close();
             }
             return trainings;
+        }
+
+        public static void reserveTraining(Training reserveTraining)
+        {
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"update Trainings set status = 1, beginner = @beginner where id = @id";
+                command.Parameters.Add(new SqlParameter("id", reserveTraining.id));
+                command.Parameters.Add(new SqlParameter("beginner", reserveTraining.beginner.username));
+
+                SqlDataReader reader = command.ExecuteReader();
+            }
+        }
+
+        public static void cancelReservation(Training cancelTraining)
+        {
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"update Trainings set status = 0, beginner = Null where id = @id";
+                command.Parameters.Add(new SqlParameter("id", cancelTraining.id));
+
+                SqlDataReader reader = command.ExecuteReader();
+            }
+        }
+
+        public static void deleteTraining(Training deleteTraining)
+        {
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"update Trainings set isDeleted = 1 where id = @id and status = 0";
+                command.Parameters.Add(new SqlParameter("id", deleteTraining.id));
+                command.Parameters.Add(new SqlParameter("status", deleteTraining.status));
+
+                SqlDataReader reader = command.ExecuteReader();
+            }
+        }
+
+        public static void deleteTrainingAdmin(Training deleteTraining)
+        {
+            using (SqlConnection connection = new SqlConnection(Util.CONNECTION_STRING))
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = @"update Trainings set isDeleted = 1 where id = @id";
+                command.Parameters.Add(new SqlParameter("id", deleteTraining.id));
+
+                SqlDataReader reader = command.ExecuteReader();
+            }
         }
     }
 }

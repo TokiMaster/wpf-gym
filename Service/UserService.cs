@@ -102,7 +102,6 @@ namespace SR23_2020_POP2021.Servisi
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = @"update Users set isDeleted = 1 where username = @username";
-                command.Parameters.Add(new SqlParameter("isDeleted", deleteUser.isDeleted));
                 command.Parameters.Add(new SqlParameter("username", deleteUser.username));
                 SqlDataReader reader = command.ExecuteReader();
             }

@@ -9,8 +9,7 @@
         Title="All users" Height="500" Width="900"
         ResizeMode="NoResize">
     <Grid>
-        <Image Source="/Images/Lobby.jpg"
-               Stretch="Fill"></Image>
+        <Image Source="/Images/Lobby.jpg" Stretch="Fill"/>
 
         <Menu Height="20" HorizontalAlignment="Left"
               VerticalAlignment="Top">
@@ -24,13 +23,24 @@
                 <MenuItem Header="Delete" 
                           Name="deleteUser"
                           Click="deleteUser_Click"/>
-                <Separator/>
-                <MenuItem Header="Exit"
-                          Name="exit"
-                          Click="exit_Click"
-                          Cursor="Hand"/>
             </MenuItem>
         </Menu>
+
+        <TextBox Width="120" Height="30" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Margin="0,3,0,0"
+                 Name="value"> 
+            
+        </TextBox>
+        <Button Width="100" Height="30" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="270,3,0,0"
+                Content="Search"
+                Name="search"
+                Click="search_Click">
+        </Button>
         
         <DataGrid Name="UsersDG" Height="400" Width="800" Background="Transparent">
             <DataGrid.Columns>

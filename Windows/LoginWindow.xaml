@@ -29,7 +29,7 @@
 
             <TextBox Grid.Row="1"
                      Name="username"
-                     Text="Vlaki"
+                     Text="Maki"
                      Width="200"
                      Height="35"
                      HorizontalAlignment="Center"
@@ -47,7 +47,7 @@
 
             <PasswordBox Grid.Row="2"
                     Name="password"
-                    Password="vlaki"
+                    Password="maki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"
@@ -56,17 +56,6 @@
                     Background="Transparent"
                     BorderThickness="2"
                     Foreground="White">
-                <!--<PasswordBox.Resources>
-                    <Style TargetType="PasswordBox">
-                        <Setter Property="Template" >
-                            <Setter.Value>
-                                <ControlTemplate>
-                                    <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="2" />
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </PasswordBox.Resources>-->
                 <PasswordBox.Style>
                     <Style TargetType="{x:Type PasswordBox}">
                         <Style.Resources>

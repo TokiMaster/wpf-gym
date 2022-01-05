@@ -61,6 +61,8 @@ namespace SR23_2020_POP2021.Windows
             };
 
             UserService.createNewUser(newUser);
+            UserCrudWindow userCrudWindow = new UserCrudWindow();
+            userCrudWindow.Show();
             this.Close();
         }
     }

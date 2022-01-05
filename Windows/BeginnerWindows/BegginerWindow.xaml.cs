@@ -45,7 +45,7 @@ namespace SR23_2020_POP2021.Windows
 
         private void reservation_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MakeReservationWindow makeReservationWindow = new MakeReservationWindow();
+            MakeReservationWindow makeReservationWindow = new MakeReservationWindow(modifyUser);
             makeReservationWindow.Show();
         }
 
