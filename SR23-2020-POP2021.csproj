@@ -62,8 +62,14 @@
     <Compile Include="Service\FitnessCenterService.cs" />
     <Compile Include="Service\TrainingService.cs" />
     <Compile Include="Service\UserService.cs" />
+    <Compile Include="Windows\AdministratorWindows\AddTrainingWindow.xaml.cs">
+      <DependentUpon>AddTrainingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdministratorWindows\AllTrainingsWindow.xaml.cs">
       <DependentUpon>AllTrainingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AdministratorWindows\EditTrainingWindow.xaml.cs">
+      <DependentUpon>EditTrainingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\BeginnerWindows\BegginerWindow.xaml.cs">
       <DependentUpon>BegginerWindow.xaml</DependentUpon>
@@ -121,7 +127,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\AdministratorWindows\AddTrainingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AdministratorWindows\AllTrainingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdministratorWindows\EditTrainingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

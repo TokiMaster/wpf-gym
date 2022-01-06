@@ -29,7 +29,7 @@
 
             <TextBox Grid.Row="1"
                      Name="username"
-                     Text="Maki"
+                     Text="Toki"
                      Width="200"
                      Height="35"
                      HorizontalAlignment="Center"
@@ -47,7 +47,7 @@
 
             <PasswordBox Grid.Row="2"
                     Name="password"
-                    Password="maki"
+                    Password="toki"
                     Width="200"
                     Height="35"
                     HorizontalAlignment="Center"

@@ -47,12 +47,15 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
 
         private void addTraining_Click(object sender, RoutedEventArgs e)
         {
-
+            AddTrainingWindow addTrainingWindow = new AddTrainingWindow();
+            addTrainingWindow.Show();
         }
 
         private void editTraining_Click(object sender, RoutedEventArgs e)
         {
-
+            Training selectedTraining = (Training)trainingsDG.SelectedItem;
+            EditTrainingWindow editTrainingWindow = new EditTrainingWindow(selectedTraining);
+            editTrainingWindow.Show();
         }
 
         private void deleteTraining_Click(object sender, RoutedEventArgs e)
