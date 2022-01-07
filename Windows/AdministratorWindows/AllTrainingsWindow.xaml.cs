@@ -54,19 +54,33 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
         private void editTraining_Click(object sender, RoutedEventArgs e)
         {
             Training selectedTraining = (Training)trainingsDG.SelectedItem;
-            EditTrainingWindow editTrainingWindow = new EditTrainingWindow(selectedTraining);
-            editTrainingWindow.Show();
+            if (selectedTraining == null)
+            {
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                EditTrainingWindow editTrainingWindow = new EditTrainingWindow(selectedTraining);
+                editTrainingWindow.Show();
+            }
         }
 
         private void deleteTraining_Click(object sender, RoutedEventArgs e)
         {
             Training deleteTraining = (Training)trainingsDG.SelectedItem;
-            if (MessageBox.Show("Are you sure you want to delete training id = " + deleteTraining.id,
-                "Delete " + deleteTraining.id, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (deleteTraining == null)
             {
-                TrainingService.deleteTrainingAdmin(deleteTraining);
-                deleteTraining.isDeleted = true;
-                updateView();
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to delete training id = " + deleteTraining.id,
+                    "Delete " + deleteTraining.id, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                {
+                    TrainingService.deleteTrainingAdmin(deleteTraining);
+                    deleteTraining.isDeleted = true;
+                    updateView();
+                }
             }
         }
     }

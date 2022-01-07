@@ -55,15 +55,21 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
         private void Reserve_Click(object sender, RoutedEventArgs e)
         {
             Training reserveTraining = (Training)trainingsDG.SelectedItem;
-
-            if (MessageBox.Show("Are you sure you want to make reservation on " + reserveTraining.date.ToShortDateString() +
-                " at " + reserveTraining.date.Hour + ":" + reserveTraining.date.Minute,
-                "Make reservation", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (reserveTraining == null)
             {
-                reserveTraining.beginner = user1;
-                TrainingService.reserveTraining(reserveTraining);
-                reserveTraining.status = Status.RESERVED;
-                updateView();
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to make reservation on " + reserveTraining.date.ToShortDateString() +
+                    " at " + reserveTraining.date.Hour + ":" + reserveTraining.date.Minute,
+                    "Make reservation", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                {
+                    reserveTraining.beginner = user1;
+                    TrainingService.reserveTraining(reserveTraining);
+                    reserveTraining.status = Status.RESERVED;
+                    updateView();
+                }
             }
         }
     }

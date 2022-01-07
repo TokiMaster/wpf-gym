@@ -52,13 +52,20 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
         private void deleteTraining_Click(object sender, RoutedEventArgs e)
         {
             Training deleteTraining = (Training)trainingsDG.SelectedItem;
-            if(MessageBox.Show("Are you sure you want to make reservation on " + deleteTraining.date.ToShortDateString() +
-                " at " + deleteTraining.date.Hour + ":" + deleteTraining.date.Minute,
-                "Delete training", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (deleteTraining == null)
             {
-                TrainingService.deleteTraining(deleteTraining);
-                deleteTraining.isDeleted = true;
-                updateView();
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to make reservation on " + deleteTraining.date.ToShortDateString() +
+                    " at " + deleteTraining.date.Hour + ":" + deleteTraining.date.Minute,
+                    "Delete training", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                {
+                    TrainingService.deleteTraining(deleteTraining);
+                    deleteTraining.isDeleted = true;
+                    updateView();
+                }
             }
         }
     }

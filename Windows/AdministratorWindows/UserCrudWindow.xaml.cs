@@ -48,9 +48,16 @@ namespace SR23_2020_POP2021.Windows
 
         private void editUser_Click(object sender, RoutedEventArgs e)
         {
-            User user = (User) UsersDG.SelectedItem;
-            EditUserWindow editUser = new EditUserWindow(user);
-            editUser.Show();
+            User selectedUser = (User) UsersDG.SelectedItem;
+            if (selectedUser == null)
+            {
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                EditUserWindow editUser = new EditUserWindow(selectedUser);
+                editUser.Show();
+            }
         }
 
         public void updateView()
@@ -79,12 +86,19 @@ namespace SR23_2020_POP2021.Windows
         private void deleteUser_Click(object sender, RoutedEventArgs e)
         {
             User deleteUser = (User)UsersDG.SelectedItem;
-            if (MessageBox.Show("Are you sure you want to delete " + deleteUser.username,
-                "Delete " + deleteUser.username, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (deleteUser == null)
             {
-                UserService.deleteUser(deleteUser);
-                deleteUser.isDeleted = true;
-                updateView();
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to delete " + deleteUser.username,
+                    "Delete " + deleteUser.username, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                {
+                    UserService.deleteUser(deleteUser);
+                    deleteUser.isDeleted = true;
+                    updateView();
+                }
             }
         }
 

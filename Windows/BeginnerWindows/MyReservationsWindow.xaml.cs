@@ -54,14 +54,21 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
         {
             Training cancelTraining = (Training)trainingsDG.SelectedItem;
 
-            if (MessageBox.Show("Are you sure you want to cancel training on " + cancelTraining.date.ToShortDateString() + 
-                " at " + cancelTraining.date.Hour + ":" + cancelTraining.date.Minute,
-                "Cancel training" , MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (cancelTraining == null)
             {
-                TrainingService.cancelReservation(cancelTraining);
-                cancelTraining.status = Status.FREE;
-                cancelTraining.beginner = null;
-                updateView();
+                MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to cancel training on " + cancelTraining.date.ToShortDateString() + 
+                    " at " + cancelTraining.date.Hour + ":" + cancelTraining.date.Minute,
+                    "Cancel training" , MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                {
+                    TrainingService.cancelReservation(cancelTraining);
+                    cancelTraining.status = Status.FREE;
+                    cancelTraining.beginner = null;
+                    updateView();
+                }
             }
         }
     }
