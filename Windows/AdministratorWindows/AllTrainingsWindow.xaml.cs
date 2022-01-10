@@ -30,7 +30,7 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             trainings = TrainingService.ReadTrainings();
             foreach (Training training in trainings)
             {
-                trainingsDG.Items.Add(training);                
+                trainingsDG.Items.Add(training);       
             }
         }
 

@@ -1,6 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
 using SR23_2020_POP2021.Service;
-using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +29,13 @@ namespace SR23_2020_POP2021.Windows
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
+
+            if (UserService.findUserByUsername(username.Text) != null)
+            {
+                MessageBox.Show("Username already taken", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             int streetNo = int.Parse(streetNumber.Text);
 
             Address newAddress = new Address
@@ -41,6 +47,7 @@ namespace SR23_2020_POP2021.Windows
             };
 
             int id = AddressService.createNewAddress(newAddress);
+            newAddress.id = id;
 
             User newUser = new User
             {
@@ -48,7 +55,7 @@ namespace SR23_2020_POP2021.Windows
                 name = name.Text,
                 surname = surname.Text,
                 gender = (Gender) gender.SelectedItem,
-                address = AddressService.findOneByID(id),
+                address = newAddress,
                 email = email.Text,
                 password = password.Text,
                 userRole = Role.BEGINNER

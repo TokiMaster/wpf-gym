@@ -1,6 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
 using SR23_2020_POP2021.Service;
-using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,17 +28,17 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
         public EditTrainingWindow(Training training)
         {
             InitializeComponent();
-            trainings = TrainingService.ReadTrainings();
-            users = UserService.ReadUsers();
             DataContext = training;
             modifyTraining = training;
+            trainings = TrainingService.ReadTrainings();
+            users = UserService.ReadUsers();
             status.ItemsSource = Enum.GetValues(typeof(Status)).Cast<Status>();
 
             foreach(User user in users)
             {
                 if (user.userRole.Equals(Role.INSTRUCTOR))
                 {
-                    instructorsCB.Items.Add(user.username);
+                    instructorsCB.Items.Add(user);
                 }
             }
 
@@ -47,7 +46,7 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             {
                 if (user.userRole.Equals(Role.BEGINNER))
                 {
-                    beginnersCB.Items.Add(user.username);
+                    beginnersCB.Items.Add(user);
                 }
             }
 

@@ -18,6 +18,9 @@
                 <MenuItem Header="Delete training" 
                           Name="deleteTraining"
                           Click="deleteTraining_Click"/>
+                <MenuItem Header="Add training" 
+                          Name="addTraining"
+                          Click="addTraining_Click"/>
             </MenuItem>
         </Menu>
         

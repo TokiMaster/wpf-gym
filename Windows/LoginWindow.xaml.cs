@@ -1,5 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
-using SR23_2020_POP2021.Servisi;
+using SR23_2020_POP2021.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,29 +37,36 @@ namespace SR23_2020_POP2021.Windows
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            foreach (User user in users)
+
+            String usernameTXT = username.Text;
+            String passwordTXT = password.Password.ToString();
+
+            User user = UserService.login(usernameTXT, passwordTXT);
+
+            if(user != null)
             {
-                if (user.username.Equals(username.Text) && user.password.Equals(password.Password.ToString()) && user.isDeleted.Equals(false))
+                if (user.userRole.Equals(Role.ADMINISTRATOR))
                 {
-                    if (user.userRole.Equals(Role.ADMINISTRATOR))
-                    {
-                        AdministratorWindow administratorWindow = new AdministratorWindow(user);
-                        administratorWindow.Show();
-                        this.Close();
-                    }
-                    else if (user.userRole.Equals(Role.INSTRUCTOR))
-                    {
-                        InstructorWindow instructorWindow = new InstructorWindow(user);
-                        instructorWindow.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        BegginerWindow begginerWindow = new BegginerWindow(user);
-                        begginerWindow.Show();
-                        this.Close();
-                    }
+                    AdministratorWindow administratorWindow = new AdministratorWindow(user);
+                    administratorWindow.Show();
+                    this.Close();
                 }
+                else if (user.userRole.Equals(Role.INSTRUCTOR))
+                {
+                    InstructorWindow instructorWindow = new InstructorWindow(user);
+                    instructorWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    BegginerWindow begginerWindow = new BegginerWindow(user);
+                    begginerWindow.Show();
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Username or password incorrect", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

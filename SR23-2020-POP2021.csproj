@@ -92,6 +92,9 @@
     <Compile Include="Windows\AdministratorWindows\AdministratorWindow.xaml.cs">
       <DependentUpon>AdministratorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\InstructorWindows\AddTrainingWindow.xaml.cs">
+      <DependentUpon>AddTrainingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\InstructorWindows\InstructorWindow.xaml.cs">
       <DependentUpon>InstructorWindow.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AdministratorWindows\AdministratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\InstructorWindows\AddTrainingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

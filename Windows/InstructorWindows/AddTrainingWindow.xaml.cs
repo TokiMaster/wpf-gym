@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SR23_2020_POP2021.Windows.AdministratorWindows
+namespace SR23_2020_POP2021.Windows.InstructorWindows
 {
     /// <summary>
     /// Interaction logic for AddTrainingWindow.xaml
@@ -23,33 +23,14 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
     {
         private List<Training> trainings;
         private List<User> users;
-        public AddTrainingWindow()
+        private User user;
+        public AddTrainingWindow(User loggedInstructor)
         {
             InitializeComponent();
+            DataContext = loggedInstructor;
+            user = loggedInstructor;
             trainings = TrainingService.ReadTrainings();
             users = UserService.ReadUsers();
-            statusCB.ItemsSource = Enum.GetValues(typeof(Status)).Cast<Status>();
-
-            foreach (User user in users)
-            {
-                if (user.userRole.Equals(Role.INSTRUCTOR))
-                {
-                    instructorsCB.Items.Add(user.username);
-                }
-            }
-
-            foreach (User user in users)
-            {
-                if (user.userRole.Equals(Role.BEGINNER))
-                {
-                    beginnersCB.Items.Add(user.username);
-                }
-            }
-        }
-
-        private void cancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
@@ -58,22 +39,24 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             TimeSpan timeOfDay = TimeSpan.Parse(time.Text);
             int duration1 = int.Parse(duration.Text);
             TimeSpan duration2 = TimeSpan.FromMinutes(duration1);
-            User beginner = null; 
-            if (beginnersCB.SelectedItem != null)
-            {
-                beginner = UserService.findUserByUsername(beginnersCB.SelectedItem.ToString());
-            }
-
+            
             Training newTraining = new Training
             {
                 date = dateTime.Value.Add(timeOfDay),
                 duration = duration2,
-                status = (Status)statusCB.SelectedItem,
-                instructor = UserService.findUserByUsername(instructorsCB.SelectedItem.ToString()),
-                beginner = beginner
+                status = Status.FREE,
+                instructor = UserService.findUserByUsername(user.username),
+                beginner = null
             };
 
             TrainingService.addTraining(newTraining);
+            MyTrainingsWindow myTrainingsWindow = new MyTrainingsWindow(user);
+            myTrainingsWindow.Show();
+            this.Close();
+        }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

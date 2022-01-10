@@ -1,6 +1,5 @@
 ﻿using SR23_2020_POP2021.Entities;
 using SR23_2020_POP2021.Service;
-using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +32,8 @@ namespace SR23_2020_POP2021.Windows
             addresses = AddressService.ReadAddresses();
             foreach (User user in users)
             {
-                if (!user.isDeleted) {     
+                if (!user.isDeleted)
+                {
                     UsersDG.Items.Add(user);
                 }
             }
@@ -48,7 +48,7 @@ namespace SR23_2020_POP2021.Windows
 
         private void editUser_Click(object sender, RoutedEventArgs e)
         {
-            User selectedUser = (User) UsersDG.SelectedItem;
+            User selectedUser = (User)UsersDG.SelectedItem;
             if (selectedUser == null)
             {
                 MessageBox.Show("You didn't select any row", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -71,17 +71,6 @@ namespace SR23_2020_POP2021.Windows
             return !user.isDeleted;
         }
 
-        private bool searchFilter(object s)
-        {
-            User user = s as User;
-            return user.username.Contains(value.Text) 
-                 | user.name.Contains(value.Text) 
-                 | user.surname.Contains(value.Text) 
-                 | user.address.streetName.Contains(value.Text)
-                 | user.address.city.Contains(value.Text)
-                 | user.address.country.Contains(value.Text)
-                 | user.email.Contains(value.Text) && !user.isDeleted;
-        }
 
         private void deleteUser_Click(object sender, RoutedEventArgs e)
         {
@@ -102,9 +91,62 @@ namespace SR23_2020_POP2021.Windows
             }
         }
 
-        private void search_Click(object sender, RoutedEventArgs e)
+        private bool searchByUsername(object s)
         {
-            UsersDG.Items.Filter = new Predicate<object>(searchFilter);
+            User user = s as User;
+            return user.username.Contains(valueUsername.Text) && !user.isDeleted;
+        }
+
+        private bool searchByName(object s)
+        {
+            User user = s as User;
+            return user.name.Contains(valueName.Text) && !user.isDeleted;
+        }
+
+        private bool searchBySurname(object s)
+        {
+            User user = s as User;
+            return user.surname.Contains(valueSurname.Text) && !user.isDeleted;
+        }
+
+        private bool searchByAddress(object s)
+        {
+            User user = s as User;
+            return user.address.streetName.Contains(valueAddress.Text)
+                 | user.address.city.Contains(valueAddress.Text)
+                 | user.address.country.Contains(valueAddress.Text)
+            && !user.isDeleted;
+        }
+
+        private bool searchByEmail(object s)
+        {
+            User user = s as User;
+            return user.email.Contains(valueEmail.Text) && !user.isDeleted;
+        }
+
+        private void valueUsername_KeyUp(object sender, KeyEventArgs e)
+        {
+            UsersDG.Items.Filter = new Predicate<object>(searchByUsername);
+        }
+
+        private void valueName_KeyUp(object sender, KeyEventArgs e)
+        {
+            UsersDG.Items.Filter = new Predicate<object>(searchByName);
+        }
+
+        private void valueSurname_KeyUp(object sender, KeyEventArgs e)
+        {
+            UsersDG.Items.Filter = new Predicate<object>(searchBySurname);
+        }
+
+        private void valueAddress_KeyUp(object sender, KeyEventArgs e)
+        {
+            UsersDG.Items.Filter = new Predicate<object>(searchByAddress);
+        }
+
+        private void valueEmail_KeyUp(object sender, KeyEventArgs e)
+        {
+            UsersDG.Items.Filter = new Predicate<object>(searchByEmail);
         }
     }
 }

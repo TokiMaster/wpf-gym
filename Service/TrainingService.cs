@@ -1,5 +1,4 @@
 ﻿using SR23_2020_POP2021.Entities;
-using SR23_2020_POP2021.Servisi;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -110,10 +109,17 @@ namespace SR23_2020_POP2021.Service
                 command.CommandText = @"insert into Trainings (startDate, duration, status, instructor, beginner)
                                         values (@startDate, @duration, @status, @instructor, @beginner)";
                 command.Parameters.Add(new SqlParameter("startDate", newTraining.date));
-                command.Parameters.Add(new SqlParameter("duration", newTraining.duration));
+                command.Parameters.Add(new SqlParameter("duration", newTraining.duration.TotalMinutes));
                 command.Parameters.Add(new SqlParameter("status", newTraining.status));
                 command.Parameters.Add(new SqlParameter("instructor", newTraining.instructor.username));
-                command.Parameters.Add(new SqlParameter("beginner", newTraining.beginner.username));
+                if (newTraining.beginner == null)
+                {
+                    command.Parameters.Add(new SqlParameter("beginner", DBNull.Value));
+                }
+                else
+                {
+                    command.Parameters.Add(new SqlParameter("beginner", newTraining.beginner.username));
+                }
 
                 SqlDataReader reader = command.ExecuteReader();
             }
@@ -129,10 +135,17 @@ namespace SR23_2020_POP2021.Service
                                         status = @status, instructor = @instructor, beginner = @beginner where id = @id";
                 command.Parameters.Add(new SqlParameter("id", editTraining.id));
                 command.Parameters.Add(new SqlParameter("startDate", editTraining.date));
-                command.Parameters.Add(new SqlParameter("duration", editTraining.duration));
+                command.Parameters.Add(new SqlParameter("duration", editTraining.duration.TotalMinutes));
                 command.Parameters.Add(new SqlParameter("status", editTraining.status));
                 command.Parameters.Add(new SqlParameter("instructor", editTraining.instructor.username));
-                command.Parameters.Add(new SqlParameter("beginner", editTraining.beginner.username));
+                if(editTraining.beginner == null)
+                {
+                    command.Parameters.Add(new SqlParameter("beginner", DBNull.Value));
+                }
+                else
+                {
+                    command.Parameters.Add(new SqlParameter("beginner", editTraining.beginner.username));
+                }
 
                 SqlDataReader reader = command.ExecuteReader();
             }

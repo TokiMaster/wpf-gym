@@ -1,4 +1,4 @@
-﻿<Window x:Class="SR23_2020_POP2021.Windows.AdministratorWindows.AddTrainingWindow"
+﻿<Window x:Class="SR23_2020_POP2021.Windows.InstructorWindows.AddTrainingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
-        Height="500" Width="400"
+        Height="400" Width="350"
         WindowStyle="None" 
         ResizeMode="NoResize">
 
@@ -19,14 +19,11 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
@@ -43,14 +40,13 @@
                 <DatePicker Grid.Column="1"
                             VerticalContentAlignment="Center"
                             Name="date">
-                    
                 </DatePicker>
-   
+
             </Grid>
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="2" 
@@ -83,7 +79,7 @@
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="2" 
@@ -112,84 +108,6 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-            </Grid>
-
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" 
-                       Grid.Column="0"
-                       FontSize="15" 
-                       VerticalAlignment="Center" 
-                       HorizontalAlignment="Left"
-                       Margin="20,0,0,0"
-                       FontFamily="Times new roman bold" 
-                       Foreground="White">Status:
-                </Label>
-
-                <ComboBox Grid.Row="1"
-                          Grid.Column="1"
-                          Height="30"
-                          Width="225"
-                          Name="statusCB"
-                          HorizontalContentAlignment="Center"
-                          VerticalContentAlignment="Center"
-                          HorizontalAlignment="Left">
-                </ComboBox>
-            </Grid>
-
-            <Grid Grid.Row="4">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" 
-                       Grid.Column="0"
-                       FontSize="15" 
-                       VerticalAlignment="Center" 
-                       HorizontalAlignment="Left"
-                       Margin="20,0,0,0"
-                       FontFamily="Times new roman bold" 
-                       Foreground="White">Instructor:
-                </Label>
-
-                <ComboBox Grid.Row="1"
-                          Grid.Column="1"
-                          Height="30"
-                          Width="225"
-                          Name="instructorsCB"
-                          HorizontalContentAlignment="Center"
-                          VerticalContentAlignment="Center"
-                          HorizontalAlignment="Left">
-                </ComboBox>
-            </Grid>
-
-            <Grid Grid.Row="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" 
-                       Grid.Column="0"
-                       FontSize="15" 
-                       VerticalAlignment="Center" 
-                       HorizontalAlignment="Left"
-                       Margin="20,0,0,0"
-                       FontFamily="Times new roman bold" 
-                       Foreground="White">Beginner:
-                </Label>
-
-                <ComboBox Grid.Row="1"
-                          Grid.Column="1"
-                          Height="30"
-                          Width="225"
-                          Name="beginnersCB"
-                          HorizontalContentAlignment="Center"
-                          VerticalContentAlignment="Center"
-                          HorizontalAlignment="Left">
-                </ComboBox>
             </Grid>
 
             <Grid Grid.Row="6">

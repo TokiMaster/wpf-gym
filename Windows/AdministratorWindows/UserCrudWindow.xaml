@@ -9,7 +9,7 @@
         Title="All users" Height="500" Width="900"
         ResizeMode="NoResize">
     <Grid>
-        <Image Source="/Images/Lobby.jpg" Stretch="Fill"/>
+        <Image Source="/Images/Lobby.jpg" Stretch="Fill" Height="470" Margin="0,0,-0.4,0.4" VerticalAlignment="Bottom"/>
 
         <Menu Height="20" HorizontalAlignment="Left"
               VerticalAlignment="Top">
@@ -26,22 +26,46 @@
             </MenuItem>
         </Menu>
 
-        <TextBox Width="120" Height="30" 
+        <TextBox Width="100" Height="30" 
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="50,3,0,0"
+                 Name="valueUsername"
+                 KeyUp="valueUsername_KeyUp">
+        </TextBox>
+
+        <TextBox Width="100" Height="30" 
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="170,3,0,0"
+                 Name="valueName"
+                 KeyUp="valueName_KeyUp">
+        </TextBox>
+
+        <TextBox Width="100" Height="30" 
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Margin="0,3,220,0"
+                 Name="valueSurname"
+                 KeyUp="valueSurname_KeyUp">
+        </TextBox>
+
+        <TextBox Width="100" Height="30" 
                  HorizontalAlignment="Center"
                  VerticalAlignment="Top"
                  Margin="0,3,0,0"
-                 Name="value"> 
-            
+                 Name="valueAddress"
+                 KeyUp="valueAddress_KeyUp">
         </TextBox>
-        <Button Width="100" Height="30" 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                Margin="270,3,0,0"
-                Content="Search"
-                Name="search"
-                Click="search_Click">
-        </Button>
-        
+
+        <TextBox Width="100" Height="30" 
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Top"
+                 Margin="0,3,170,0"
+                 Name="valueEmail"
+                 KeyUp="valueEmail_KeyUp">
+        </TextBox>
+
         <DataGrid Name="UsersDG" Height="400" Width="800" Background="Transparent">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Username" Binding="{Binding username}" Width="*"/>

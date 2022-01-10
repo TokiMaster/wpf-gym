@@ -21,12 +21,14 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
     /// </summary>
     public partial class MyTrainingsWindow : Window
     {
-        List<Training> trainings;
+        private List<Training> trainings;
+        private User loggedInstructor;
         
         public MyTrainingsWindow(User user)
         {
             InitializeComponent();
             DataContext = user;
+            loggedInstructor = user;
             trainings = TrainingService.ReadTrainings();
             foreach(Training training in trainings)
             {
@@ -58,15 +60,29 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want to make reservation on " + deleteTraining.date.ToShortDateString() +
-                    " at " + deleteTraining.date.Hour + ":" + deleteTraining.date.Minute,
-                    "Delete training", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                if (deleteTraining.status.Equals(Status.FREE))
                 {
-                    TrainingService.deleteTraining(deleteTraining);
-                    deleteTraining.isDeleted = true;
-                    updateView();
+                    if (MessageBox.Show("Are you sure you want to delete training on " + deleteTraining.date.ToShortDateString() +
+                        " at " + deleteTraining.date.Hour + ":" + deleteTraining.date.Minute,
+                        "Delete training", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                    {
+                        TrainingService.deleteTraining(deleteTraining);
+                        deleteTraining.isDeleted = true;
+                        updateView();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You can't delete reserved training", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        private void addTraining_Click(object sender, RoutedEventArgs e)
+        {
+            AddTrainingWindow addTrainingWindow = new AddTrainingWindow(loggedInstructor);
+            addTrainingWindow.Show();
+            this.Close();
         }
     }
 }

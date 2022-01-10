@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SR23_2020_POP2021.Windows"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
-        Height="500" Width="425"
+        Height="500" Width="400"
         WindowStyle="None" 
         ResizeMode="NoResize">
 
@@ -21,54 +21,44 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                
             </Grid.RowDefinitions>
-
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-
-                <Label Grid.Row="1" 
+                <Label Grid.Row="2" 
                        Grid.Column="0"
                        FontSize="15" 
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Left"
                        Margin="20,0,0,0"
                        FontFamily="Times new roman bold" 
-                       Foreground="White">Start date:
+                       Foreground="White">Time:
                 </Label>
 
-                <DatePicker Grid.Column="1"
-                            VerticalContentAlignment="Center"
-                            Background="Transparent"
-                            Text="{Binding Path=date}">
-                    
-                </DatePicker>
-                
-
-                <!--<TextBox Grid.Column="1"
+                <TextBox Grid.Column="1"
                          Width="225"
                          Height="35"
-                         Name="username"
+                         Name="time"
                          HorizontalAlignment="Left"
                          HorizontalContentAlignment="Left"
                          VerticalContentAlignment="Center"
                          Background="Transparent"
                          BorderThickness="2"
-                         Foreground="White">
+                         Foreground="White"
+                         Text="{Binding Path=date}">
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="3"/>
                         </Style>
                     </TextBox.Resources>
-                </TextBox>-->
+                </TextBox>
             </Grid>
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="2" 
@@ -102,7 +92,7 @@
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
@@ -123,13 +113,13 @@
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
                           HorizontalAlignment="Left"
-                          Text="{Binding Path=status}">
+                          SelectedItem="{Binding Path=status}">
                 </ComboBox>
             </Grid>
 
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
@@ -150,13 +140,13 @@
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
                           HorizontalAlignment="Left"
-                          Text="{Binding Path=instructor.username}">
+                          SelectedItem="{Binding Path=instructor}">
                 </ComboBox>
             </Grid>
 
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="1" 
@@ -177,7 +167,7 @@
                           HorizontalContentAlignment="Center"
                           VerticalContentAlignment="Center"
                           HorizontalAlignment="Left"
-                          Text="{Binding Path=beginner.username}">
+                          SelectedItem="{Binding Path=beginner}">
                 </ComboBox>
             </Grid>
 

@@ -102,5 +102,19 @@ namespace SR23_2020_POP2021.Entities
             return name + " " + surname;
         }
 
+        public override bool Equals(object obj)
+        {
+            User user = obj as User;
+            if (user == null)
+            {
+                return false;
+            }
+            return this.username.Equals(user.username);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.username.GetHashCode();
+        }
     }
 }
