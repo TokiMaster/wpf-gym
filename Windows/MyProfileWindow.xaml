@@ -41,6 +41,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="name"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -75,6 +76,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="surname"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -108,15 +110,14 @@
                 </Label>
 
                 <ComboBox Grid.Row="1"
-                     Grid.Column="1"
-                     Height="30"
-                     Width="275"
-                     HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Text="{Binding Path=gender}">
-                    <ComboBoxItem IsSelected="True">MALE</ComboBoxItem>
-                    <ComboBoxItem>FEMALE</ComboBoxItem>
+                          Grid.Column="1"
+                          Name="gender"
+                          Height="30"
+                          Width="275"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          HorizontalAlignment="Left"
+                          Text="{Binding Path=gender}">
                 </ComboBox>
             </Grid>
 
@@ -136,6 +137,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="streetName"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -169,6 +171,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="streetNumber"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -202,6 +205,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="city"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -235,6 +239,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="country"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -268,6 +273,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="email"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"
@@ -301,6 +307,7 @@
                 </Label>
 
                 <TextBox Grid.Column="1"
+                         Name="password"
                          Width="275"
                          Height="35"
                          HorizontalAlignment="Left"

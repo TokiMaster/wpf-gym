@@ -35,6 +35,14 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
+            if (date.SelectedDate == null
+              | time.Text.Equals("")
+              | duration.Text.Equals(""))
+            {
+                MessageBox.Show("You must fill all fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             DateTime? dateTime = date.SelectedDate;
             TimeSpan timeOfDay = TimeSpan.Parse(time.Text);
             int duration1 = int.Parse(duration.Text);
@@ -57,6 +65,8 @@ namespace SR23_2020_POP2021.Windows.InstructorWindows
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
+            MyTrainingsWindow myTrainingsWindow = new MyTrainingsWindow(user);
+            myTrainingsWindow.Show();
             this.Close();
         }
     }

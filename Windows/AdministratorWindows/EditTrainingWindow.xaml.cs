@@ -32,7 +32,7 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             modifyTraining = training;
             trainings = TrainingService.ReadTrainings();
             users = UserService.ReadUsers();
-            status.ItemsSource = Enum.GetValues(typeof(Status)).Cast<Status>();
+            statusCB.ItemsSource = Enum.GetValues(typeof(Status)).Cast<Status>();
 
             foreach(User user in users)
             {
@@ -49,11 +49,19 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
                     beginnersCB.Items.Add(user);
                 }
             }
-
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            if (time.Text.Equals("")
+              | duration.Text.Equals("")
+              | statusCB.SelectedItem == null
+              | instructorsCB.SelectedItem == null)
+            {
+                MessageBox.Show("You must fill all fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             TrainingService.editTraining(modifyTraining);
             this.Close();
         }

@@ -49,11 +49,23 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
+            AllTrainingsWindow allTrainingsWindow = new AllTrainingsWindow();
+            allTrainingsWindow.Show();
             this.Close();
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
         {
+            if (date.SelectedDate == null
+              | time.Text.Equals("")
+              | duration.Text.Equals("")
+              | statusCB.SelectedItem == null
+              | instructorsCB.SelectedItem == null)
+            {
+                MessageBox.Show("You must fill all fields", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             DateTime? dateTime = date.SelectedDate;
             TimeSpan timeOfDay = TimeSpan.Parse(time.Text);
             int duration1 = int.Parse(duration.Text);
@@ -74,6 +86,8 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             };
 
             TrainingService.addTraining(newTraining);
+            AllTrainingsWindow allTrainingsWindow = new AllTrainingsWindow();
+            allTrainingsWindow.Show();
             this.Close();
         }
     }

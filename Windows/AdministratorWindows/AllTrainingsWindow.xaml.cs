@@ -49,6 +49,7 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
         {
             AddTrainingWindow addTrainingWindow = new AddTrainingWindow();
             addTrainingWindow.Show();
+            this.Close();
         }
 
         private void editTraining_Click(object sender, RoutedEventArgs e)
@@ -74,8 +75,9 @@ namespace SR23_2020_POP2021.Windows.AdministratorWindows
             }
             else
             {
-                if (MessageBox.Show("Are you sure you want to delete training id = " + deleteTraining.id,
-                    "Delete " + deleteTraining.id, MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete training on " + deleteTraining.date.ToShortDateString() +
+                        " at " + deleteTraining.date.Hour + ":" + deleteTraining.date.Minute,
+                        "Delete training", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
                 {
                     TrainingService.deleteTrainingAdmin(deleteTraining);
                     deleteTraining.isDeleted = true;

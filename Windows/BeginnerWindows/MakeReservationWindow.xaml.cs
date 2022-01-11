@@ -62,7 +62,7 @@ namespace SR23_2020_POP2021.Windows.BeginnerWindows
             {
                 if (MessageBox.Show("Are you sure you want to make reservation on " + reserveTraining.date.ToShortDateString() +
                     " at " + reserveTraining.date.Hour + ":" + reserveTraining.date.Minute,
-                    "Make reservation", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+                    "Make reservation", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     reserveTraining.beginner = user1;
                     TrainingService.reserveTraining(reserveTraining);

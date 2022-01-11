@@ -333,8 +333,7 @@
                     <ColumnDefinition Width="175"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="1" 
-                       Grid.Column="0"
+                <Label Grid.Column="0"
                        FontSize="15" 
                        VerticalAlignment="Center" 
                        HorizontalAlignment="Left"
@@ -343,22 +342,26 @@
                        Foreground="White">Password:
                 </Label>
 
-                <TextBox Grid.Column="1"
-                         Name="password"
-                         Width="275"
-                         Height="35"
-                         HorizontalAlignment="Left"
-                         HorizontalContentAlignment="Left"
-                         VerticalContentAlignment="Center"
-                         Background="Transparent"
-                         BorderThickness="2"
-                         Foreground="White">
-                    <TextBox.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="3"/>
+                <PasswordBox Grid.Column="2"
+                    Name="password"
+                    Width="275"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness="2"
+                    Foreground="White">
+                    <PasswordBox.Style>
+                        <Style TargetType="{x:Type PasswordBox}">
+                            <Style.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="3" />
+                                </Style>
+                            </Style.Resources>
                         </Style>
-                    </TextBox.Resources>
-                </TextBox>
+                    </PasswordBox.Style>
+                </PasswordBox>
             </Grid>
 
             <Grid Grid.Row="11">

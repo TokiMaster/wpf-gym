@@ -39,7 +39,7 @@ namespace SR23_2020_POP2021.Windows
                     UsersDG.Items.Add(user);
                 }
             }
-            InfoDG.Items.Add(force); 
+            InfoDG.Items.Add(force);
         }
     }
 }
